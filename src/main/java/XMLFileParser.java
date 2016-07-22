@@ -63,6 +63,7 @@ public class XMLFileParser {
 					Element desc = (Element) eElement.getElementsByTagName("long_desc").item(0);
 
 					String name = ((Element)eElement.getElementsByTagName("reporter").item(0)).getAttribute("name");
+					if (name.equals("")) name = eElement.getElementsByTagName("reporter").item(0).getTextContent();
 					String summary = eElement.getElementsByTagName("short_desc").item(0).getTextContent() ;
 					String description = desc.getElementsByTagName("thetext").item(0).getTextContent();
 

@@ -11,11 +11,11 @@ import java.util.List;
  */
 public class Main {
 	public static void main(String[] args) throws IOException, ParseException {
-		List<BugReport> bugReports = XMLFileParser.getInstance().parse("bugzilla_bug.xml");
+//		List<BugReport> bugReports = XMLFileParser.getInstance().parse("test.xml");
 		BugReport testReport = XMLFileParser.getInstance().parse("report.xml").get(0);
-		Indexer indexer = new Indexer(bugReports);
-//		Indexer indexer = new Indexer();
-		indexer.createIndex();
+//		Indexer indexer = new Indexer(bugReports);
+		Indexer indexer = new Indexer();
+//		indexer.createIndex();
 
 		CosineDocumentSimilarity similarity = new CosineDocumentSimilarity(indexer.createTestIndex(
 				testReport.getSummary(), testReport.getDescription()));
@@ -29,11 +29,19 @@ public class Main {
 		System.out.println();
 		printSummedUpSortedResult(documentSimilarities);
 
-		ArrayList<WordFrequencyContainer> searchReports  = new WordMatcher().searchReports(new Stemmer().englishStemer("UI locks up toggling on the variable filters"));
+		WordMatcher wordMatcher = new WordMatcher();
+		ArrayList<WordFrequencyContainer> searchReports = wordMatcher.searchReports(new Stemmer().englishStemer("UI locks up toggling on the variable filters"));
 
 		searchReports.forEach(wordFrequencyContainer ->  {
 			System.out.println(wordFrequencyContainer.getDeveloperName());
 			wordFrequencyContainer.getDetails().forEach((wordFrequencyDetails -> System.out.println("\t" + wordFrequencyDetails.getIndexName() +" " + wordFrequencyDetails.getWord() + " " + wordFrequencyDetails.getFrequency())));
+		});
+
+		System.out.println();
+		System.out.println("***************Word Developer Details***********");
+		wordMatcher.getWordDeveloperDetailsMap().forEach((s, wordDeveloperDetails) -> {
+			System.out.println(s + " ( Total Developer: " + wordDeveloperDetails.getDevCount().size() + " )");
+			wordDeveloperDetails.getDevCount().forEach((name, floats) -> System.out.println("\t\t" + name + " " + floats[0]));
 		});
 	}
 

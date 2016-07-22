@@ -11,6 +11,8 @@ import org.apache.lucene.store.FSDirectory;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by peacefrog on 7/13/16.
@@ -22,10 +24,11 @@ public class WordMatcher {
 	private ArrayList<WordFrequencyContainer> frequencies ;
 	private ArrayList<WordFrequencyDetails> lists ;
 	private ArrayList<String> wordTracker ;
+	private Map<String, WordDeveloperDetails> wordDeveloperDetailsMap = new HashMap<>();
 	private boolean found ;
 
-	private String indexPath = Constants.INDEX;
-	private String[] fields = { Constants.SUMMARY, Constants.DESCRIPTION };
+	private final String indexPath = Constants.INDEX;
+	private final String[] fields = {Constants.SUMMARY, Constants.DESCRIPTION};
 
 	public WordMatcher(){
 		lists = new ArrayList<>();
@@ -105,11 +108,8 @@ public class WordMatcher {
 				getFrequencies(explanation);
 				String name = doc.get(Constants.NAME);
 
+				calculateWordDeveloperRelation(name);
 
-//				System.out.println(name);
-//				for (WordFrequencyDetails list : lists) {
-//					System.out.println("\t" + list);
-//				}
 				frequencies.add(new WordFrequencyContainer(name , lists));
 				lists = new ArrayList<>();
 			}
@@ -119,6 +119,27 @@ public class WordMatcher {
 			}
 
 		}
+	}
+
+	private void calculateWordDeveloperRelation(String name) {
+		lists.forEach(wordFrequencyDetails -> {
+			String word = wordFrequencyDetails.getWord();
+			if (wordDeveloperDetailsMap.containsKey(word)) {
+
+				Map<String, float[]> devCount = wordDeveloperDetailsMap.get(word).getDevCount();
+				if (devCount.containsKey(name)) {
+					devCount.get(name)[0] += wordFrequencyDetails.getFrequency();
+				} else {
+					devCount.put(name, new float[1]);
+					devCount.get(name)[0] += wordFrequencyDetails.getFrequency();
+				}
+			} else {
+				wordDeveloperDetailsMap.put(word, new WordDeveloperDetails(word));
+				Map<String, float[]> devCount = wordDeveloperDetailsMap.get(word).getDevCount();
+				devCount.put(name, new float[1]);
+				devCount.get(name)[0] += wordFrequencyDetails.getFrequency();
+			}
+		});
 	}
 
 	private void  getFrequencies(Explanation explanation) {
@@ -155,4 +176,7 @@ public class WordMatcher {
 		return split;
 	}
 
+	public Map<String, WordDeveloperDetails> getWordDeveloperDetailsMap() {
+		return wordDeveloperDetailsMap;
+	}
 }
