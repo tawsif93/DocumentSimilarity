@@ -70,9 +70,8 @@ public class XMLFileParser {
 //					System.out.println("Summary : " + summary);
 //					System.out.println("Description :\n" + description);
 
-					summary = stemmer.englishStemer(summary);
-					description = stemmer.englishStemer(description);
-
+					summary = stemmer.englishStemer(summary).trim();
+					description = stemmer.englishStemer(description).trim();
 					report = new BugReport(name , summary , description);
 
 					reports.add(report);

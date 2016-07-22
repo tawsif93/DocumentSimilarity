@@ -11,11 +11,11 @@ import java.util.List;
  */
 public class Main {
 	public static void main(String[] args) throws IOException, ParseException {
-//		List<BugReport> bugReports = XMLFileParser.getInstance().parse("bugzilla_bug.xml");
+		List<BugReport> bugReports = XMLFileParser.getInstance().parse("bugzilla_bug.xml");
 		BugReport testReport = XMLFileParser.getInstance().parse("report.xml").get(0);
-//		Indexer indexer = new Indexer(bugReports);
-		Indexer indexer = new Indexer();
-//		indexer.createIndex();
+		Indexer indexer = new Indexer(bugReports);
+//		Indexer indexer = new Indexer();
+		indexer.createIndex();
 
 		CosineDocumentSimilarity similarity = new CosineDocumentSimilarity(indexer.createTestIndex(
 				testReport.getSummary(), testReport.getDescription()));

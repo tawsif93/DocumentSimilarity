@@ -118,7 +118,7 @@ public class Indexer {
 		// year/month/day/hour/minutes/seconds, down the resolution you require.
 		// For example the long value 2011021714 would mean
 		// February 17, 2011, 2-3 PM.
-		doc.add(new Field(Constants.SUMMARY, report.getSummary(), CosineDocumentSimilarity.TYPE_STORED));
+		doc.add(new Field(Constants.SUMMARY, Objects.equals(report.getSummary(), "") ? "null" : report.getSummary(), CosineDocumentSimilarity.TYPE_STORED));
 
 		// Add the contents of the file to a field named "contents".  Specify a Reader,
 		// so that the text of the file is tokenized and indexed, but not stored.
@@ -156,8 +156,8 @@ public class Indexer {
 
 	void addDocument(IndexWriter writer, String summary , String  desc) throws IOException {
 		Document doc = new Document();
-		doc.add(new Field(Constants.SUMMARY, stemmer.englishStemer(summary), CosineDocumentSimilarity.TYPE_STORED));
-		doc.add(new Field(Constants.DESCRIPTION, stemmer.englishStemer(desc), CosineDocumentSimilarity.TYPE_STORED));
+		doc.add(new Field(Constants.SUMMARY, summary, CosineDocumentSimilarity.TYPE_STORED));
+		doc.add(new Field(Constants.DESCRIPTION, desc, CosineDocumentSimilarity.TYPE_STORED));
 
 		writer.addDocument(doc);
 	}

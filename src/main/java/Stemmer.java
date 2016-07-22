@@ -17,14 +17,14 @@ public class Stemmer {
 
 	public String englishStemer(String word){
 		EnglishStemmer english = new EnglishStemmer();
-		word = word.replaceAll("\n", "").replaceAll("\r", "");
+		word = word.replaceAll("\n", " ").replaceAll("\r", " ");
 		String[] words = word.split(" ");
 		StringBuilder  builder = new StringBuilder("");
 		for(int i = 0; i < words.length; i++){
-			english.setCurrent(words[i]);
+			english.setCurrent(words[i].trim());
 			english.stem();
 //			System.out.println(english.getCurrent());
-			builder.append(english.getCurrent()).append(" ");
+			if (!english.getCurrent().equals("")) builder.append(english.getCurrent()).append(" ");
 		}
 
 		return builder.toString();
