@@ -1,7 +1,4 @@
-import com.j2bugzilla.base.Bug;
-import com.j2bugzilla.base.BugzillaConnector;
 import com.j2bugzilla.base.BugzillaException;
-import com.j2bugzilla.base.ConnectionException;
 import com.j2bugzilla.rpc.BugSearch;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -36,30 +33,24 @@ import static junit.framework.Assert.assertEquals;
 public class XMLFetcher {
 
 
-	private BugzillaConnector connector;
 	private String url = "https://bugs.eclipse.org/bugs/";
 
 	public XMLFetcher() {
-		connector = new BugzillaConnector();
-
-		try {
-			connector.connectTo(url);
-		} catch (ConnectionException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Test
 	public void fetchBugzillaBugs() throws BugzillaException {
-		BugSearch.SearchQuery[] queries = buildQuery();
-		BugSearch search = new BugSearch(queries);
 
-		connector.executeMethod(search);
+		ArrayList<String> bugIds = getBugIDsFormCSV();
 
-		ArrayList<String> urls = buildURLs(search.getSearchResults());
+		ArrayList<String> urls = buildURLs(bugIds);
 		assertEquals("Size of urls", urls.size(), 16);
-		assertEquals("Size of the bug list", search.getSearchResults().size(), 7600);
+		assertEquals("Size of the bug list", bugIds.size(), 7600);
 		buildMainXML(urls);
+	}
+
+	private ArrayList<String> getBugIDsFormCSV() {
+		return null;
 	}
 
 	public void buildMainXML(ArrayList<String> urls) {
@@ -98,7 +89,7 @@ public class XMLFetcher {
 		return nodes;
 	}
 
-	private ArrayList<String> buildURLs(List<Bug> results) {
+	private ArrayList<String> buildURLs(List<String> results) {
 		ArrayList<String> urls = new ArrayList<>();
 
 		int end = 0;
@@ -110,8 +101,8 @@ public class XMLFetcher {
 			tempURL.append("show_bug.cgi?");
 
 			for (int j = start; j < end; j++) {
-				Bug bug = results.get(j);
-				tempURL.append("id=").append(bug.getID()).append("&");
+
+				tempURL.append("id=").append(results.get(j)).append("&");
 			}
 
 			tempURL.append("ctype=xml");
@@ -125,8 +116,7 @@ public class XMLFetcher {
 			tempURL.append("show_bug.cgi?");
 
 			for (int i = end; i < results.size(); i++) {
-				Bug bug = results.get(i);
-				tempURL.append("id=").append(bug.getID()).append("&");
+				tempURL.append("id=").append(results.get(i)).append("&");
 			}
 			tempURL.append("ctype=xml");
 
