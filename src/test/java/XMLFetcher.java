@@ -1,3 +1,4 @@
+import com.opencsv.CSVReader;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -16,9 +17,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,21 +39,41 @@ public class XMLFetcher {
 	@Test
 	public void fetchBugzillaBugs() {
 
-		ArrayList<String> bugIds = new ArrayList<>();
-//				getBugIDsFormCSV();
+		ArrayList<String> bugIds = getBugIDsFormCSV();
 
 		ArrayList<String> urls = buildURLs(bugIds);
-		assertEquals("Size of urls", urls.size(), 16);
-		assertEquals("Size of the bug list", bugIds.size(), 7600);
+		assertEquals("Size of urls", urls.size(), 26);
+		assertEquals("Size of the bug list", bugIds.size(), 12810);
 		buildMainXML(urls);
 	}
 
-	@Test
-	public void getBugIDsFormCSV() {
+	private ArrayList<String> getBugIDsFormCSV() {
 		ArrayList<String> bugIDs = new ArrayList<>();
 
 		fetchCSV();
 
+		for (Integer i = 2001; i < 2017; i++) {
+			CSVReader csvReader;
+			try {
+				csvReader = new CSVReader(new FileReader("CSV/" + i.toString() + ".csv"));
+				String[] nextLine;
+				csvReader.readNext();
+				while ((nextLine = csvReader.readNext()) != null) {
+
+					bugIDs.add(nextLine[0]);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		try {
+			FileUtils.forceDeleteOnExit(new File("CSV"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return bugIDs;
 	}
 
 	private void fetchCSV() {
