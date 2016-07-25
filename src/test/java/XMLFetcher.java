@@ -1,5 +1,4 @@
-import com.j2bugzilla.base.BugzillaException;
-import com.j2bugzilla.rpc.BugSearch;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 import org.w3c.dom.Document;
@@ -39,9 +38,10 @@ public class XMLFetcher {
 	}
 
 	@Test
-	public void fetchBugzillaBugs() throws BugzillaException {
+	public void fetchBugzillaBugs() {
 
-		ArrayList<String> bugIds = getBugIDsFormCSV();
+		ArrayList<String> bugIds = new ArrayList<>();
+//				getBugIDsFormCSV();
 
 		ArrayList<String> urls = buildURLs(bugIds);
 		assertEquals("Size of urls", urls.size(), 16);
@@ -49,8 +49,39 @@ public class XMLFetcher {
 		buildMainXML(urls);
 	}
 
-	private ArrayList<String> getBugIDsFormCSV() {
-		return null;
+	@Test
+	public void getBugIDsFormCSV() {
+		ArrayList<String> bugIDs = new ArrayList<>();
+
+		fetchCSV();
+
+	}
+
+	private void fetchCSV() {
+		for (int i = 2001; i <= 2016; i++) {
+			Integer year = i;
+			String baseURL = "https://bugs.eclipse.org/bugs/buglist.cgi?" +
+					"bug_status=VERIFIED&" +
+					"classification=Eclipse&" +
+					"f1=creation_ts&f2=creation_ts&" +
+					"o1=greaterthaneq&o2=lessthaneq&" +
+					"limit=0&list_id=14812660&" +
+					"product=JDT&" +
+					"query_format=advanced&" +
+					"resolution=FIXED&" +
+					"v1=" + year.toString() + "-1-01%20&v2=" +
+					year.toString() + "-12-31%20&" +
+					"ctype=csv&human=1";
+
+			File csvFile = new File("CSV/" + year.toString() + ".csv");
+
+			try {
+				FileUtils.copyURLToFile(new URL(baseURL), csvFile);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
 	}
 
 	public void buildMainXML(ArrayList<String> urls) {
@@ -127,7 +158,7 @@ public class XMLFetcher {
 	}
 
 	/**
-	 * This method fiorst collect xml stream from bugzilla
+	 * This method first collect xml stream from bugzilla
 	 * Then stripped of the INVALID XML charachter which are less than 0x20 in Unicode
 	 * Then convert that sting to Input Stream from XML parsing
 	 *
@@ -153,17 +184,6 @@ public class XMLFetcher {
 		return doc;
 	}
 
-	private BugSearch.SearchQuery[] buildQuery() {
-		BugSearch.SearchQuery[] queries = new BugSearch.SearchQuery[4];
-
-		queries[0] = new BugSearch.SearchQuery(BugSearch.SearchLimiter.PRODUCT, "jdt");
-//		queries[1] = new BugSearch.SearchQuery(BugSearch.SearchLimiter.COMPONENT, "ui");
-		queries[1] = new BugSearch.SearchQuery(BugSearch.SearchLimiter.STATUS, "verified");
-		queries[2] = new BugSearch.SearchQuery(BugSearch.SearchLimiter.RESOLUTION, "fixed");
-		queries[3] = new BugSearch.SearchQuery(BugSearch.SearchLimiter.LIMIT, "7600");
-
-		return queries;
-	}
 
 	public void writeXMLFile(Document doc, String fileName) throws TransformerException {
 
