@@ -30,7 +30,7 @@ public class Main {
 		printSummedUpSortedResult(documentSimilarities);
 
 		WordMatcher wordMatcher = new WordMatcher();
-		ArrayList<WordFrequencyContainer> searchReports = wordMatcher.searchReports(new Stemmer().englishStemer("UI locks up toggling on the variable filters"));
+		ArrayList<WordFrequencyContainer> searchReports = wordMatcher.searchReports(testReport.getSummary() + " " + testReport.getDescription());
 
 		searchReports.forEach(wordFrequencyContainer ->  {
 			System.out.println(wordFrequencyContainer.getDeveloperName());
