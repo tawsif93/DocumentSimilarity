@@ -1,360 +1,59 @@
-<bugzilla version="4.4.7" urlbase="https://bugs.eclipse.org/bugs/" maintainer="webmaster@eclipse.org">
-
+<bugzilla version="4.4.7" urlbase="https://bugs.eclipse.org/bugs/" maintainer="webmaster@eclipse.org"
+          exporter="tawsif93@gmail.com">
     <bug>
-        <bug_id>38529</bug_id>
-        <creation_ts>2003-06-05 12:04:00 -0400</creation_ts>
-        <short_desc>UI locks up toggling on the variable filters</short_desc>
-        <delta_ts>2003-06-05 14:09:13 -0400</delta_ts>
+        <bug_id>458613</bug_id>
+        <creation_ts>2015-01-28 03:36:00 -0500</creation_ts>
+        <short_desc>[1.8] lambda not shown in quick type hierarchy</short_desc>
+        <delta_ts>2015-03-18 01:40:52 -0400</delta_ts>
         <reporter_accessible>1</reporter_accessible>
         <cclist_accessible>1</cclist_accessible>
         <classification_id>2</classification_id>
         <classification>Eclipse</classification>
         <product>JDT</product>
-        <component>Debug</component>
-        <version>2.1</version>
-        <rep_platform>PC</rep_platform>
-        <op_sys>Windows NT</op_sys>
+        <component>Core</component>
+        <version>4.5</version>
+        <rep_platform>All</rep_platform>
+        <op_sys>All</op_sys>
         <bug_status>VERIFIED</bug_status>
         <resolution>FIXED</resolution>
-        <bug_file_loc></bug_file_loc>
-        <status_whiteboard></status_whiteboard>
-        <keywords></keywords>
-        <priority>P1</priority>
-        <bug_severity>blocker</bug_severity>
-        <target_milestone>3.0 M1</target_milestone>
+        <see_also>https://git.eclipse.org/r/41591</see_also>
+        <see_also>https://git.eclipse.org/r/41896</see_also>
+        <see_also>
+            https://git.eclipse.org/c/jdt/eclipse.jdt.core.git/commit/?id=6395db1d3e68d8903c45f196e87bf93430cfb719
+        </see_also>
+        <bug_file_loc/>
+        <status_whiteboard/>
+        <keywords/>
+        <priority>P3</priority>
+        <bug_severity>normal</bug_severity>
+        <target_milestone>4.5 M6</target_milestone>
         <everconfirmed>1</everconfirmed>
-        <reporter name="Darin Swanson">Darin_Swanson</reporter>
-        <assigned_to name="Darin Swanson">Darin_Swanson</assigned_to>
+        <reporter name="Noopur Gupta">noopur_gupta@in.ibm.com</reporter>
+        <assigned_to name="Stephan Herrmann">stephan.herrmann@berlin.de</assigned_to>
+        <cc>daniel_megert@ch.ibm.com</cc>
+        <cc>jarthana@in.ibm.com</cc>
+        <cc>markus_keller@ch.ibm.com</cc>
+        <cc>sasikanth.bharadwaj@in.ibm.com</cc>
+        <cc>stephan.herrmann@berlin.de</cc>
         <votes>0</votes>
+        <token>
+            1469525766-fnQ-HTUkd0YAEXdeoYijnmv2AhQHPg4h7niDgMrZppE
+        </token>
         <comment_sort_order>oldest_to_newest</comment_sort_order>
         <long_desc isprivate="0">
-            <commentid>164844</commentid>
+            <commentid>2511176</commentid>
             <comment_count>0</comment_count>
-            <who name="Darin Swanson">Darin_Swanson</who>
-            <bug_when>2003-06-05 12:04:43 -0400</bug_when>
-            <thetext>20030604 (midnight)
-
-                Breakpoint on line 103 of the AntEditor
-                Self host
-                Open an Ant Editor.
-                In the variables view, toggle on the variable filters with the "this= AntEditor
-                (id=**)" selected.
-
-                The UI locks up (I waited 5 minutes).</thetext>
-        </long_desc><long_desc isprivate="0">
-        <commentid>164853</commentid>
-        <comment_count>1</comment_count>
-        <who name="Darin Swanson">Darin_Swanson</who>
-        <bug_when>2003-06-05 12:14:08 -0400</bug_when>
-        <thetext>Ctrl-break stack dump:
-
-            Full thread dump Java HotSpot(TM) Client VM (1.4.2-beta-b19 mixed mode):
-
-            "Thread timer" prio=5 tid=0x24929258 nid=0x68c waiting on condition [327f000..32
-            7fd94]
-            at java.lang.Thread.sleep(Native Method)
-            at org.eclipse.debug.internal.ui.views.launch.LaunchViewEventHandler$Thr
-            eadTimer.checkTimers(LaunchViewEventHandler.java:439)
-            at org.eclipse.debug.internal.ui.views.launch.LaunchViewEventHandler$Thr
-            eadTimer.access$2(LaunchViewEventHandler.java:406)
-            at org.eclipse.debug.internal.ui.views.launch.LaunchViewEventHandler$1.r
-            un(LaunchViewEventHandler.java:398)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Debug async queue" prio=5 tid=0x24584d90 nid=0x844 in Object.wait() [31ff000..3
-            1ffd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x1388e908&gt; (a org.eclipse.debug.core.DebugPlugin$AsynchRu
-            nner)
-            at java.lang.Object.wait(Object.java:429)
-            at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:
-            802)
-            - locked &lt;0x1388e908&gt; (a org.eclipse.debug.core.DebugPlugin$AsynchRunner
-            )
-            at java.lang.Thread.run(Thread.java:534)
-
-            "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x24670d78 n
-            id=0x71c in Object.wait() [314f000..314fd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x13414988&gt; (a org.eclipse.jface.text.reconciler.DirtyRegi
-            onQueue)
-            at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread
-            .run(AbstractReconciler.java:161)
-            - locked &lt;0x13414988&gt; (a org.eclipse.jface.text.reconciler.DirtyRegionQu
-            eue)
-
-            "org.eclipse.jdt.internal.ui.text.JavaReconciler" daemon prio=2 tid=0x0f924c80 n
-            id=0x134 in Object.wait() [30bf000..30bfd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x13414d10&gt; (a org.eclipse.jface.text.reconciler.DirtyRegi
-            onQueue)
-            at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread
-            .run(AbstractReconciler.java:161)
-            - locked &lt;0x13414d10&gt; (a org.eclipse.jface.text.reconciler.DirtyRegionQu
-            eue)
-
-            "Snapshot" prio=5 tid=0x0f9b0440 nid=0x794 in Object.wait() [307f000..307fd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x13192258&gt; (a org.eclipse.core.internal.resources.Delayed
-            SnapshotRunnable)
-            at org.eclipse.core.internal.resources.DelayedSnapshotRunnable.run(Delay
-            edSnapshotRunnable.java:38)
-            - locked &lt;0x13192258&gt; (a org.eclipse.core.internal.resources.DelayedSnap
-            shotRunnable)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "org.eclipse.jdt.debug: JDI Event Dispatcher" prio=5 tid=0x0f808d60 nid=0x848 in
-            Object.wait() [303f000..303fd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x131922b8&gt; (a org.eclipse.jdi.internal.connect.PacketRece
-            iveManager)
-            at java.lang.Object.wait(Object.java:429)
-            at org.eclipse.jdi.internal.connect.PacketReceiveManager.waitForPacketAv
-            ailable(PacketReceiveManager.java:168)
-            at org.eclipse.jdi.internal.connect.PacketReceiveManager.getCommand(Pack
-            etReceiveManager.java:93)
-            - locked &lt;0x131922b8&gt; (a org.eclipse.jdi.internal.connect.PacketReceiveM
-            anager)
-            at org.eclipse.jdi.internal.MirrorImpl.getCommandVM(MirrorImpl.java:276)
-
-            at org.eclipse.jdi.internal.event.EventQueueImpl.remove(EventQueueImpl.j
-            ava:63)
-            at org.eclipse.jdi.internal.event.EventQueueImpl.remove(EventQueueImpl.j
-            ava:48)
-            at org.eclipse.jdt.internal.debug.core.EventDispatcher.run(EventDispatch
-            er.java:206)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Packet Send Manager" prio=5 tid=0x0f909c40 nid=0x6bc in Object.wait() [2fef000.
-            .2fefd94]
-            at java.lang.Object.wait(Native Method)
-            at java.lang.Object.wait(Object.java:429)
-            at org.eclipse.jdi.internal.connect.PacketSendManager.sendAvailablePacke
-            ts(PacketSendManager.java:94)
-            - locked &lt;0x13192420&gt; (a org.eclipse.jdi.internal.connect.PacketSendMana
-            ger)
-            at org.eclipse.jdi.internal.connect.PacketSendManager.run(PacketSendMana
-            ger.java:54)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Packet Receive Manager" prio=5 tid=0x0f8e9e58 nid=0x778 runnable [2faf000..2faf
-            d94]
-            at java.net.SocketInputStream.socketRead0(Native Method)
-            at java.net.SocketInputStream.read(SocketInputStream.java:129)
-            at java.net.SocketInputStream.read(SocketInputStream.java:182)
-            at java.io.DataInputStream.readInt(DataInputStream.java:443)
-            at org.eclipse.jdi.internal.jdwp.JdwpPacket.read(JdwpPacket.java:124)
-            at org.eclipse.jdi.internal.connect.PacketReceiveManager.readAvailablePa
-            cket(PacketReceiveManager.java:224)
-            at org.eclipse.jdi.internal.connect.PacketReceiveManager.run(PacketRecei
-            veManager.java:70)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Console Polling Thread" prio=5 tid=0x0f8088c8 nid=0x47c waiting on condition [2
-            f2f000..2f2fd94]
-            at java.lang.Thread.sleep(Native Method)
-            at org.eclipse.debug.internal.ui.views.console.ConsoleDocumentPartitione
-            r.pollAndSleep(ConsoleDocumentPartitioner.java:528)
-            at org.eclipse.debug.internal.ui.views.console.ConsoleDocumentPartitione
-            r$1.run(ConsoleDocumentPartitioner.java:512)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Process Monitor" prio=5 tid=0x0f8198c8 nid=0x65c runnable [2eef000..2eefd94]
-            at java.lang.Win32Process.waitFor(Native Method)
-            at org.eclipse.debug.internal.core.ProcessMonitor.monitorProcess(Process
-            Monitor.java:51)
-            at org.eclipse.debug.internal.core.ProcessMonitor.access$0(ProcessMonito
-            r.java:48)
-            at org.eclipse.debug.internal.core.ProcessMonitor$1.run(ProcessMonitor.j
-            ava:68)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Input Stream Monitor" prio=5 tid=0x0f7f2c20 nid=0x91c in Object.wait() [2eaf000
-            ..2eafd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x13192670&gt; (a java.lang.Object)
-            at java.lang.Object.wait(Object.java:429)
-            at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStr
-            eamMonitor.java:124)
-            - locked &lt;0x13192670&gt; (a java.lang.Object)
-            at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamM
-            onitor.java:99)
-            at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamM
-            onitor.java:75)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Output Stream Monitor" prio=5 tid=0x0f955a38 nid=0x930 runnable [2e6f000..2e6fd
-            94]
-            at java.io.FileInputStream.readBytes(Native Method)
-            at java.io.FileInputStream.read(FileInputStream.java:177)
-            at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStream
-            Monitor.java:132)
-            at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputSt
-            reamMonitor.java:124)
-            at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStrea
-            mMonitor.java:177)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Output Stream Monitor" prio=5 tid=0x24580870 nid=0x748 runnable [2e2f000..2e2fd
-            94]
-            at java.io.FileInputStream.readBytes(Native Method)
-            at java.io.FileInputStream.read(FileInputStream.java:194)
-            at java.io.BufferedInputStream.read1(BufferedInputStream.java:220)
-            at java.io.BufferedInputStream.read(BufferedInputStream.java:277)
-            - locked &lt;0x131967c0&gt; (a java.io.BufferedInputStream)
-            at java.io.FilterInputStream.read(FilterInputStream.java:90)
-            at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStream
-            Monitor.java:132)
-            at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputSt
-            reamMonitor.java:124)
-            at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStrea
-            mMonitor.java:177)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Decoration" daemon prio=2 tid=0x246d6e78 nid=0x608 in Object.wait() [f51f000..f
-            51fd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x1183c1b8&gt; (a org.eclipse.ui.internal.decorators.Decorati
-            onScheduler)
-            at java.lang.Object.wait(Object.java:429)
-            at org.eclipse.ui.internal.decorators.DecorationScheduler.next(Decoratio
-            nScheduler.java:214)
-            - locked &lt;0x1183c1b8&gt; (a org.eclipse.ui.internal.decorators.DecorationSc
-            heduler)
-            at org.eclipse.ui.internal.decorators.DecorationScheduler$2.run(Decorati
-            onScheduler.java:240)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Java indexing" daemon prio=4 tid=0x243cee90 nid=0x854 in Object.wait() [f31f000
-            ..f31fd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x1182a848&gt; (a org.eclipse.jdt.internal.core.search.indexi
-            ng.IndexManager)
-            at java.lang.Object.wait(Object.java:429)
-            at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobMan
-            ager.java:350)
-            - locked &lt;0x1182a848&gt; (a org.eclipse.jdt.internal.core.search.indexing.I
-            ndexManager)
-            at java.lang.Thread.run(Thread.java:534)
-
-            "Signal Dispatcher" daemon prio=10 tid=0x00920d10 nid=0x5bc waiting on condition
-            [0..0]
-
-            "Finalizer" daemon prio=9 tid=0x0091df70 nid=0x628 in Object.wait() [2422f000..2
-            422fd94]
-            at java.lang.Object.wait(Native Method)
-            at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:111)
-            - locked &lt;0x1148ac98&gt; (a java.lang.ref.ReferenceQueue$Lock)
-            at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:127)
-            at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
-
-            "Reference Handler" daemon prio=10 tid=0x0091cae8 nid=0x6a0 in Object.wait() [24
-            1ef000..241efd94]
-            at java.lang.Object.wait(Native Method)
-            - waiting on &lt;0x1148ad00&gt; (a java.lang.ref.Reference$Lock)
-            at java.lang.Object.wait(Object.java:429)
-            at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:115)
-            - locked &lt;0x1148ad00&gt; (a java.lang.ref.Reference$Lock)
-
-            "main" prio=5 tid=0x00234e48 nid=0x768 runnable [6e000..6fc3c]
-            at java.lang.System.arraycopy(Native Method)
-            at java.util.ArrayList.toArray(ArrayList.java:305)
-            at org.eclipse.jdt.internal.debug.ui.JavaVariablesContentProvider.getCon
-            tentProviderForValue(JavaVariablesContentProvider.java:146)
-            at org.eclipse.jdt.internal.debug.ui.JavaVariablesContentProvider.getCon
-            tentProvider(JavaVariablesContentProvider.java:84)
-            at org.eclipse.jdt.internal.debug.ui.JavaVariablesContentProvider.hasVar
-            iableChildren(JavaVariablesContentProvider.java:74)
-            at org.eclipse.debug.internal.ui.views.variables.VariablesViewContentPro
-            vider.hasModelSpecificVariableChildren(VariablesViewContentProvider.java:181)
-            at org.eclipse.debug.internal.ui.views.variables.VariablesViewContentPro
-            vider.hasChildren(VariablesViewContentProvider.java:164)
-            at org.eclipse.jface.viewers.AbstractTreeViewer.isExpandable(AbstractTre
-            eViewer.java:1049)
-            at org.eclipse.jface.viewers.AbstractTreeViewer.updatePlus(AbstractTreeV
-            iewer.java:1461)
-            at org.eclipse.jface.viewers.AbstractTreeViewer.updateChildren(AbstractT
-            reeViewer.java:1412)
-            at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefreshStruct(Ab
-            stractTreeViewer.java:960)
-            at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(Abstract
-            TreeViewer.java:940)
-            at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(Abstract
-            TreeViewer.java:911)
-            at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(Abstract
-            TreeViewer.java:897)
-            at org.eclipse.jface.viewers.StructuredViewer$7.run(StructuredViewer.jav
-            a:861)
-            at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(Struct
-            uredViewer.java:801)
-            at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.j
-            ava:859)
-            at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.j
-            ava:821)
-            at org.eclipse.debug.internal.ui.views.variables.VariablesViewer.refresh
-            (VariablesViewer.java:64)
-            at org.eclipse.debug.internal.ui.views.variables.VariablesContentProvide
-            rsToggleAction$1.run(VariablesContentProvidersToggleAction.java:64)
-            at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
-
-            at org.eclipse.debug.internal.ui.views.variables.VariablesContentProvide
-            rsToggleAction.valueChanged(VariablesContentProvidersToggleAction.java:62)
-            at org.eclipse.debug.internal.ui.views.variables.VariablesContentProvide
-            rsToggleAction.run(VariablesContentProvidersToggleAction.java:49)
-            at org.eclipse.jface.action.Action.runWithEvent(Action.java:842)
-            at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection
-            (ActionContributionItem.java:542)
-            at org.eclipse.jface.action.ActionContributionItem.access$4(ActionContri
-            butionItem.java:496)
-            at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionC
-            ontributionItem.java:443)
-            at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:81)
-            at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:848)
-            at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2034)
-            at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:1741)
-            at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1399)
-            at org.eclipse.ui.internal.Workbench.run(Workbench.java:1382)
-            at org.eclipse.core.internal.boot.InternalBootLoader.run(InternalBootLoa
-            der.java:858)
-            at org.eclipse.core.boot.BootLoader.run(BootLoader.java:461)
-            at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-            at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
-            java:39)
-            at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
-            sorImpl.java:25)
-            at java.lang.reflect.Method.invoke(Method.java:324)
-            at org.eclipse.core.launcher.Main.basicRun(Main.java:291)
-            at org.eclipse.core.launcher.Main.run(Main.java:747)
-            at org.eclipse.core.launcher.Main.main(Main.java:583)
-
-            "VM Thread" prio=5 tid=0x0095d748 nid=0x918 runnable
-
-            "VM Periodic Task Thread" prio=10 tid=0x0023e5b0 nid=0x470 waiting on condition
-
-            "Suspend Checker Thread" prio=10 tid=0x009203c0 nid=0x298 runnable
-
-        </thetext>
-    </long_desc><long_desc isprivate="0">
-        <commentid>164898</commentid>
-        <comment_count>2</comment_count>
-        <who name="Joe Szurszewski">eclipse</who>
-        <bug_when>2003-06-05 13:37:18 -0400</bug_when>
-        <thetext>Fixed in JavaVariablesContentProvider.getContentProviderForValue().</thetext>
-    </long_desc><long_desc isprivate="0">
-        <commentid>164899</commentid>
-        <comment_count>3</comment_count>
-        <who name="Joe Szurszewski">eclipse</who>
-        <bug_when>2003-06-05 13:37:41 -0400</bug_when>
-        <thetext>Please verufy, Darins.</thetext>
-    </long_desc><long_desc isprivate="0">
-        <commentid>164918</commentid>
-        <comment_count>4</comment_count>
-        <who name="Darin Swanson">Darin_Swanson</who>
-        <bug_when>2003-06-05 14:09:13 -0400</bug_when>
-        <thetext>Verified.</thetext>
-    </long_desc>
-
-
-
+            <who name="Noopur Gupta">noopur_gupta@in.ibm.com</who>
+            <bug_when>2015-01-28 03:36:55 -0500</bug_when>
+            <thetext>
+                package p1; import java.util.Arrays; import java.util.Comparator; public class C1 { Comparator<String>c1
+                = (o1, o2) -> o1.compareToIgnoreCase(o2); public static void main(String[] args) { Comparator
+            </String> c2 = (o1, o2) -> o1.compareToIgnoreCase(o2); Arrays.sort(new String[2], (o1, o2) ->
+                o1.compareToIgnoreCase(o2)); // not shown in Ctrl+T } }
+                --------------------------------------------------------- In the above example, invoke Quick Type
+                Hierarchy (Ctrl+T) on "->". The third lambda is not shown in the quick type hierarchy result. If Open
+                Type Hierarchy (F4) is invoked on "->", all three lambdas are shown in the result.
+            </thetext>
+        </long_desc>
     </bug>
 </bugzilla>
