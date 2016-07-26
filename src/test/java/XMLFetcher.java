@@ -30,6 +30,7 @@ import static junit.framework.Assert.assertEquals;
  */
 public class XMLFetcher {
 
+//  Use -Xmx6g as JVM argument to increase Java Heap Memory before running this program
 
 	private String url = "https://bugs.eclipse.org/bugs/";
 
@@ -42,9 +43,9 @@ public class XMLFetcher {
 		ArrayList<String> bugIds = getBugIDsFormCSV();
 
 		ArrayList<String> urls = buildURLs(bugIds);
+		buildMainXML(urls);
 		assertEquals("Size of urls", urls.size(), 26);
 		assertEquals("Size of the bug list", bugIds.size(), 12810);
-		buildMainXML(urls);
 	}
 
 	private ArrayList<String> getBugIDsFormCSV() {
@@ -115,7 +116,6 @@ public class XMLFetcher {
 			rootElement.setAttribute("urlbase", url);
 
 			doc.appendChild(rootElement);
-
 			urls.forEach(url -> {
 				System.out.println(url);
 				getXMLBugNodes(url).forEach(node -> rootElement.appendChild(doc.importNode(node, true)));
@@ -144,9 +144,10 @@ public class XMLFetcher {
 
 		int end = 0;
 		int start;
-		for (int i = 0; i < (results.size() / 500); i++) {
-			start = i * 500;
-			end = i * 500 + 500;
+		int limit = 10;
+		for (int i = 0; i < (results.size() / limit); i++) {
+			start = i * limit;
+			end = i * limit + limit;
 			StringBuilder tempURL = new StringBuilder(url);
 			tempURL.append("show_bug.cgi?");
 
