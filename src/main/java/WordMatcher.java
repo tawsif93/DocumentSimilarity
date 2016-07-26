@@ -70,7 +70,7 @@ public class WordMatcher {
 				break;
 			}
 
-			Query query = multiFieldQueryParser.parse(line);
+			Query query = multiFieldQueryParser.parse(MultiFieldQueryParser.escape(line));
 			System.out.println("Searching for: " + query.toString());
 
 
