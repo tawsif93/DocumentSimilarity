@@ -144,7 +144,7 @@ public class XMLFetcher {
 
 		int end = 0;
 		int start;
-		int limit = 10;
+		int limit = 500;
 		for (int i = 0; i < (results.size() / limit); i++) {
 			start = i * limit;
 			end = i * limit + limit;
@@ -176,10 +176,9 @@ public class XMLFetcher {
 
 		return urls;
 	}
-
 	/**
 	 * This method first collect xml stream from bugzilla
-	 * Then stripped of the INVALID XML charachter which are less than 0x20 in Unicode
+	 * Then stripped of the INVALID XML character which are less than 0x20 in Unicode
 	 * Then convert that sting to Input Stream from XML parsing
 	 *
 	 * @param url url with some bug id send from {{@link #getXMLBugNodes(String)}}
@@ -200,7 +199,6 @@ public class XMLFetcher {
 		} catch (ParserConfigurationException | IOException | SAXException e) {
 			e.printStackTrace();
 		}
-
 		return doc;
 	}
 
@@ -217,6 +215,7 @@ public class XMLFetcher {
 		System.out.println("File saved!");
 	}
 
+	@SuppressWarnings("unused")
 	public void printXMLtoConsole(Document doc) throws TransformerException {
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
