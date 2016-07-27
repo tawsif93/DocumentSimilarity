@@ -17,9 +17,14 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
@@ -43,7 +48,7 @@ public class XMLFetcher {
 		ArrayList<String> bugIds = getBugIDsFormCSV();
 
 		ArrayList<String> urls = buildURLs(bugIds);
-		buildMainXML(urls);
+		buildAllBugReportXML(urls);
 		assertEquals("Size of urls", urls.size(), 26);
 		assertEquals("Size of the bug list", bugIds.size(), 12810);
 	}
@@ -104,7 +109,22 @@ public class XMLFetcher {
 		}
 	}
 
-	public void buildMainXML(ArrayList<String> urls) {
+	public void buildAllBugReportXML(ArrayList<String> urls) {
+		buildMainXML(urls, "test.xml");
+	}
+
+	@Test
+	public void buildTestBugReportXML() {
+
+		ArrayList<String> ids = (ArrayList<String>) getBugIdfromRandomTestCSV();
+		ArrayList<String> urls = buildURLs(ids);
+		buildMainXML(urls, "random.xml");
+
+		assertEquals("Size of urls ", urls.size(), 1);
+		assertEquals("Size of ids ", ids.size(), 86);
+	}
+
+	private void buildMainXML(ArrayList<String> urls, String fileName) {
 		try {
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();
@@ -121,7 +141,7 @@ public class XMLFetcher {
 				getXMLBugNodes(url).forEach(node -> rootElement.appendChild(doc.importNode(node, true)));
 			});
 
-			writeXMLFile(doc, "test.xml");
+			writeXMLFile(doc, fileName);
 
 		} catch (ParserConfigurationException | TransformerException e) {
 			e.printStackTrace();
@@ -161,7 +181,6 @@ public class XMLFetcher {
 			urls.add(tempURL.toString());
 		}
 
-
 		if (end < results.size()) {
 			StringBuilder tempURL = new StringBuilder(url);
 			tempURL.append("show_bug.cgi?");
@@ -176,6 +195,23 @@ public class XMLFetcher {
 
 		return urls;
 	}
+
+	private List<String> getBugIdfromRandomTestCSV() {
+		String fileData = null;
+		try {
+			fileData = FileUtils.readFileToString(new File("bug_id.csv"), Charset.defaultCharset());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		assert fileData != null;
+		String[] bugIDs = fileData.split(",");
+
+		ArrayList<String> idList = new ArrayList<>(Arrays.asList(bugIDs));
+
+		return idList;
+	}
+
 	/**
 	 * This method first collect xml stream from bugzilla
 	 * Then stripped of the INVALID XML character which are less than 0x20 in Unicode
@@ -231,7 +267,7 @@ public class XMLFetcher {
 	/**
 	 * Configure XML transformer for indentation
 	 *
-	 * @param transformer
+	 * @param transformer xml Transformer from {@link #printXMLtoConsole(Document)} and {@link #writeXMLFile(Document, String)}
 	 */
 	private void configureTransformer(Transformer transformer) {
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
