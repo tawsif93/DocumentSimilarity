@@ -93,7 +93,7 @@ public class XMLFetcher {
 					"limit=0&list_id=14812660&" +
 					"product=JDT&" +
 					"query_format=advanced&" +
-					"resolution=FIXED&" +
+					"resolution=DUPLICATE&" +
 					"v1=" + year.toString() + "-1-01%20&v2=" +
 					year.toString() + "-12-31%20&" +
 					"ctype=csv&human=1";
@@ -110,7 +110,7 @@ public class XMLFetcher {
 	}
 
 	public void buildAllBugReportXML(ArrayList<String> urls) {
-		buildMainXML(urls, "test.xml");
+		buildMainXML(urls, "resolutionDUPLICATE.xml");
 	}
 
 	@Test
@@ -118,10 +118,10 @@ public class XMLFetcher {
 
 		ArrayList<String> ids = (ArrayList<String>) getBugIdfromRandomTestCSV();
 		ArrayList<String> urls = buildURLs(ids);
-		buildMainXML(urls, "random.xml");
+		buildMainXML(urls, "random5.xml");
 
 		assertEquals("Size of urls ", urls.size(), 1);
-		assertEquals("Size of ids ", ids.size(), 86);
+		assertEquals("Size of ids ", ids.size(), 100);
 	}
 
 	private void buildMainXML(ArrayList<String> urls, String fileName) {
