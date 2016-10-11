@@ -170,7 +170,7 @@
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>4.3.0</version>
                 <configuration>
-                    <repoToken>JMXIsndlCzENP2nAPPRtg2S1z5LOZ8T5CGIs3</repoToken>
+                    <repoToken>lgMoSsX9WggF3mGnM4xgvlKEZUMBuLTJ4</repoToken>
                 </configuration>
             </plugin>
 
@@ -183,6 +183,7 @@
                     <maxmem>256m</maxmem>
                     <!-- aggregated reports for multi-module projects -->
                     <aggregate>true</aggregate>
+                    <check/>
                 </configuration>
             </plugin>
         </plugins>
