@@ -53,9 +53,9 @@ public class CosineDocumentSimilarity {
 
 		List<Developer> similarity = new ArrayList<>();
 
-//		System.out.println(test.document(0).get(SUMMARY));
+//		System.out.println(test.document(0).get(Constants.SUMMARY));
 //		System.out.println(test.document(0).get(DESCRIPTION));
-//
+//		getTermFrequencies(test, 0, Constants.SUMMARY).forEach((s, integer) -> System.out.println(s + " " + integer ));
 //		System.out.println(indexed.document(0).get(SUMMARY));
 //		System.out.println(indexed.document(0).get(DESCRIPTION));
 
@@ -178,7 +178,7 @@ public class CosineDocumentSimilarity {
 			int value = map.containsKey(term) ? map.get(term) : 0;
 			vector.setEntry(i++, value);
 		}
-		return (RealVector) vector.mapDivide(vector.getL1Norm());
+		return vector.mapDivide(vector.getL1Norm());
 	}
 
 	public static void main(String[] args) throws IOException {

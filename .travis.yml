@@ -4,8 +4,5 @@ mvn: test
 jdk:
   - oraclejdk8
 
-after_success:
-- mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
-
 notifications:
 email: false

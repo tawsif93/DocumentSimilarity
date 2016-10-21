@@ -118,10 +118,10 @@ public class XMLFetcher {
 
 		ArrayList<String> ids = (ArrayList<String>) getBugIdfromRandomTestCSV();
 		ArrayList<String> urls = buildURLs(ids);
-		buildMainXML(urls, "random5.xml");
+		buildMainXML(urls, "randomDUPLICATE.xml");
 
-		assertEquals("Size of urls ", urls.size(), 1);
-		assertEquals("Size of ids ", ids.size(), 100);
+		assertEquals("Size of urls ", urls.size(), 2);
+		assertEquals("Size of ids ", ids.size(), 933);
 	}
 
 	private void buildMainXML(ArrayList<String> urls, String fileName) {

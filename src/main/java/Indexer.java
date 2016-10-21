@@ -46,7 +46,7 @@ public class Indexer {
 			System.out.println("Indexing to directory '" + indexPath + "'...");
 
 			Directory dir = FSDirectory.open(Paths.get(indexPath));
-			Analyzer analyzer = new StandardAnalyzer();
+			Analyzer analyzer = new StandardAnalyzer(Constants.CUSTOM_STOP_WORDS_SET);
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
 
 			if (create) {
@@ -142,7 +142,7 @@ public class Indexer {
 
 	public Directory createTestIndex(String  summary , String desc) throws IOException {
 		Directory directory = new RAMDirectory();
-		Analyzer analyzer = new StandardAnalyzer();
+		Analyzer analyzer = new StandardAnalyzer(Constants.CUSTOM_STOP_WORDS_SET);
 		IndexWriterConfig iwc = new IndexWriterConfig(	analyzer);
 		iwc.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
 		iwc.setRAMBufferSizeMB(1024.0);

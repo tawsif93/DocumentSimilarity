@@ -52,7 +52,7 @@ public class WordMatcher {
 		IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(indexPath)));
 		IndexSearcher searcher = new IndexSearcher(reader);
 
-		Analyzer analyzer = new StandardAnalyzer();
+		Analyzer analyzer = new StandardAnalyzer(Constants.CUSTOM_STOP_WORDS_SET);
 
 
 		MultiFieldQueryParser multiFieldQueryParser = new MultiFieldQueryParser(fields , analyzer);
