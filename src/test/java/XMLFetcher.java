@@ -67,7 +67,7 @@ public class XMLFetcher {
 				while ((nextLine = csvReader.readNext()) != null) {
 
 					bugIDs.add(nextLine[0]);
-					FileUtils.writeStringToFile(new File("bugIDList.csv"), nextLine[0] + "\n", Charset.defaultCharset(), true);
+//					FileUtils.writeStringToFile(new File("bugIDList.csv"), nextLine[0] + "\n", Charset.defaultCharset(), true);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
