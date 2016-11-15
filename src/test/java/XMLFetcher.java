@@ -50,7 +50,7 @@ public class XMLFetcher {
 		ArrayList<String> urls = buildURLs(bugIds);
 		buildAllBugReportXML(urls);
 		assertEquals("Size of urls", urls.size(), 26);
-		assertEquals("Size of the bug list", bugIds.size(), 12810);
+		assertEquals("Size of the bug list", bugIds.size(), 12568);
 	}
 
 	private ArrayList<String> getBugIDsFormCSV() {
@@ -67,12 +67,13 @@ public class XMLFetcher {
 				while ((nextLine = csvReader.readNext()) != null) {
 
 					bugIDs.add(nextLine[0]);
+					FileUtils.writeStringToFile(new File("bugIDList.csv"), nextLine[0] + "\n", Charset.defaultCharset(), true);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-
+		System.out.println(bugIDs.size());
 		try {
 			FileUtils.forceDeleteOnExit(new File("CSV"));
 		} catch (IOException e) {
@@ -87,13 +88,14 @@ public class XMLFetcher {
 			Integer year = i;
 			String baseURL = "https://bugs.eclipse.org/bugs/buglist.cgi?" +
 					"bug_status=VERIFIED&" +
+					"bug_status=RESOLVED&" +
 					"classification=Eclipse&" +
 					"f1=creation_ts&f2=creation_ts&" +
 					"o1=greaterthaneq&o2=lessthaneq&" +
 					"limit=0&list_id=14812660&" +
 					"product=JDT&" +
 					"query_format=advanced&" +
-					"resolution=DUPLICATE&" +
+					"resolution=FIXED&" +
 					"v1=" + year.toString() + "-1-01%20&v2=" +
 					year.toString() + "-12-31%20&" +
 					"ctype=csv&human=1";
@@ -110,7 +112,7 @@ public class XMLFetcher {
 	}
 
 	public void buildAllBugReportXML(ArrayList<String> urls) {
-		buildMainXML(urls, "resolutionDUPLICATE.xml");
+		buildMainXML(urls, "resolutionFIXED_statusRESOLVEDandVERIFIED.xml");
 	}
 
 	@Test
@@ -120,8 +122,8 @@ public class XMLFetcher {
 		ArrayList<String> urls = buildURLs(ids);
 		buildMainXML(urls, "randomDUPLICATE.xml");
 
-		assertEquals("Size of urls ", urls.size(), 2);
-		assertEquals("Size of ids ", ids.size(), 933);
+		assertEquals("Size of urls ", urls.size(), 16);
+		assertEquals("Size of ids ", ids.size(), 7547);
 	}
 
 	private void buildMainXML(ArrayList<String> urls, String fileName) {
