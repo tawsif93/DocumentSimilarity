@@ -3,6 +3,9 @@
         <id>92009</id>
         <developer>Dejan Glozic</developer>
         <dup_id/>
+        <creation_time>2005-04-19 18:44:00 -0400</creation_time>
+        <product>JDT</product>
+        <component>Text</component>
         <short_desc>[nls tooling] Externalize Strings wizard broken</short_desc>
         <thetext>Since we moved to the new NLS format, I cannot externalize strings any more.
             Whenever I open the wizard on a file and check the option to use the new NLS
@@ -16,43 +19,43 @@
         <comment>
             <comment_id>434079</comment_id>
             <comment_count>1</comment_count>
-            <who>Dejan Glozic</who>
+            <who>Wassim Melhem</who>
             <when>2005-04-19 18:46:56 -0400</when>
-            <thetext>Nothing on heaven or earth can enable the Finish button.</thetext>
+            <comment_text>Nothing on heaven or earth can enable the Finish button.</comment_text>
         </comment>
         <comment>
             <comment_id>434087</comment_id>
             <comment_count>2</comment_count>
             <who>Dejan Glozic</who>
             <when>2005-04-19 19:03:23 -0400</when>
-            <thetext>It just sits there, gray and distant.</thetext>
+            <comment_text>It just sits there, gray and distant.</comment_text>
         </comment>
         <comment>
             <comment_id>434575</comment_id>
             <comment_count>3</comment_count>
-            <who>Dejan Glozic</who>
+            <who>Dani Megert</who>
             <when>2005-04-20 12:39:49 -0400</when>
-            <thetext>Fixed in HEAD. The problem was that we tried to validate keys for IGNORED and
+            <comment_text>Fixed in HEAD. The problem was that we tried to validate keys for IGNORED and
                 INTERNALIZED entries.
 
                 Since the re-build already started I won't ask for yet another re-build. If you
                 immediately need to use the wizard you can either use upcoming N-build or I can
                 send you a patched version of the JDT UI plug-in.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>434618</comment_id>
             <comment_count>4</comment_count>
-            <who>Dejan Glozic</who>
+            <who>Wassim Melhem</who>
             <when>2005-04-20 13:09:21 -0400</when>
-            <thetext>thanks. we could just use the cool plug-in export wizard.</thetext>
+            <comment_text>thanks. we could just use the cool plug-in export wizard.</comment_text>
         </comment>
         <comment>
             <comment_id>434623</comment_id>
             <comment_count>5</comment_count>
-            <who>Dejan Glozic</who>
+            <who>Dani Megert</who>
             <when>2005-04-20 13:15:56 -0400</when>
-            <thetext>Yes, but if you do so, you have to do the following:
+            <comment_text>Yes, but if you do so, you have to do the following:
                 1. get JDT UI versioned for this weeks I-build (v20050419-0800)
                 2. replace ExternalizeStringWizardPage with the latest revision (1.73)
                 3. export
@@ -60,29 +63,32 @@
 
                 If you take all JDT UI HEAD you will be broken because you are missing some new
                 API from Platform Text that got introduced today.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>434628</comment_id>
             <comment_count>6</comment_count>
             <who>Dejan Glozic</who>
             <when>2005-04-20 13:20:14 -0400</when>
-            <thetext>Thanks for a quick fix. I suspected it was something simple. I got used to the
+            <comment_text>Thanks for a quick fix. I suspected it was something simple. I got used to the
                 wizard so much that I cannot do without it any more.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>436314</comment_id>
             <comment_count>7</comment_count>
-            <who>Dejan Glozic</who>
+            <who>Dani Megert</who>
             <when>2005-04-22 12:34:56 -0400</when>
-            <thetext>*** Bug 92351 has been marked as a duplicate of this bug. ***</thetext>
+            <comment_text>*** Bug 92351 has been marked as a duplicate of this bug. ***</comment_text>
         </comment>
     </bug>
     <bug>
         <id>90841</id>
         <developer>DJ Houghton</developer>
         <dup_id/>
+        <creation_time>2005-04-08 14:49:00 -0400</creation_time>
+        <product>JDT</product>
+        <component>Text</component>
         <short_desc>[misc] IllegalStateException in Java editor</short_desc>
         <thetext>build i0405
 
@@ -164,9 +170,9 @@
         <comment>
             <comment_id>428638</comment_id>
             <comment_count>1</comment_count>
-            <who>DJ Houghton</who>
+            <who>Martin Aeschlimann</who>
             <when>2005-04-11 12:26:50 -0400</when>
-            <thetext>do you have a reproducible scenario for this?
+            <comment_text>do you have a reproducible scenario for this?
 
                 The one I found was when removing a project. The editor can't even deregister
                 the preference change listener. It seems that EclipsePreferences is a bit too
@@ -185,14 +191,14 @@
                 ChainedPreferenceStore.removePropertyChangeListener(IPropertyChangeListener)
                 line: 137
                 CompilationUnitEditor(AbstractTextEditor).dispose() line: 3105
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>429589</comment_id>
             <comment_count>2</comment_count>
             <who>DJ Houghton</who>
             <when>2005-04-12 12:18:56 -0400</when>
-            <thetext>No reproducable test case, sorry.
+            <comment_text>No reproducable test case, sorry.
 
                 I am working on creating preference nodes that act like handles and forward the
                 method calls to the real nodes but its not ready yet.
@@ -201,14 +207,14 @@
                 IEclipsePreferences getPreferences() {
                 return new InstanceScope().getNode("org.eclipse.core.resources");
                 }
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>429630</comment_id>
             <comment_count>3</comment_count>
-            <who>DJ Houghton</who>
+            <who>Martin Aeschlimann</who>
             <when>2005-04-12 13:07:53 -0400</when>
-            <thetext>The listeners are a problem. To deregister I have to access the class again, to
+            <comment_text>The listeners are a problem. To deregister I have to access the class again, to
                 I keep a reference. To not deregister when I find out that the project doesn't
                 exist anymore feels wrong.
 
@@ -217,14 +223,14 @@
                 probably a resource change listener on the project removal, and it seems it is
                 before the Java editor that also reacts on that.
 
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>429658</comment_id>
             <comment_count>4</comment_count>
             <who>DJ Houghton</who>
             <when>2005-04-12 13:37:08 -0400</when>
-            <thetext>There were previous problems with this case (bug 89262) where after a node was
+            <comment_text>There were previous problems with this case (bug 89262) where after a node was
                 removed, it was impossible to remove the listener. I have since updated the spec
                 to say that the listeners will be removed automatically when a node is removed.
                 (IEclipsePreferences#removeNode)
@@ -238,34 +244,37 @@
                 You can also do something like:
                 if (node.nodeExists(""))
                 node.removeListner(listener);
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>430035</comment_id>
             <comment_count>5</comment_count>
-            <who>DJ Houghton</who>
+            <who>Dani Megert</who>
             <when>2005-04-13 04:46:21 -0400</when>
-            <thetext>*** Bug 91240 has been marked as a duplicate of this bug. ***</thetext>
+            <comment_text>*** Bug 91240 has been marked as a duplicate of this bug. ***</comment_text>
         </comment>
         <comment>
             <comment_id>430140</comment_id>
             <comment_count>6</comment_count>
-            <who>DJ Houghton</who>
+            <who>Martin Aeschlimann</who>
             <when>2005-04-13 09:47:25 -0400</when>
-            <thetext>fixed &gt; 20050413
+            <comment_text>fixed &gt; 20050413
 
                 Using now the indirection context.getNode(...) all the time. Even the project is
                 not existing, the node still allows access and removing of listeners.
 
                 This is obviously using a weakness in the preferences model. I filed bug 91269.
 
-            </thetext>
+            </comment_text>
         </comment>
     </bug>
     <bug>
         <id>105738</id>
         <developer>Walter Harley</developer>
         <dup_id/>
+        <creation_time>2005-08-01 16:52:00 -0400</creation_time>
+        <product>JDT</product>
+        <component>Text</component>
         <short_desc>[painting] Mark Occurrences: sporadic random highlights when editing javadoc</short_desc>
         <thetext>Mark Occurrences sometimes highlights random text while I am typing in a
             javadoc comment. I will attach a GIF image for an example. In this example, I
@@ -286,38 +295,38 @@
             <comment_count>1</comment_count>
             <who>Walter Harley</who>
             <when>2005-08-01 16:53:18 -0400</when>
-            <thetext>Created attachment 25535
+            <comment_text>Created attachment 25535
                 Screenshot showing random highlights
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>513586</comment_id>
             <comment_count>2</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2005-08-04 08:42:46 -0400</when>
-            <thetext>Please provide more details, see:
+            <comment_text>Please provide more details, see:
                 http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-text-home/development/bug-incomplete.htm
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>594395</comment_id>
             <comment_count>3</comment_count>
-            <who>Walter Harley</who>
+            <who>Marcus Vinicius Freitas Margarites</who>
             <when>2005-12-30 06:23:05 -0500</when>
-            <thetext>It also happens to me.
+            <comment_text>It also happens to me.
                 I'm trying to create a pattern of occurrences, but still can't figure out what is wrong.
 
                 Version: 3.2.0
                 Build id: I20051215-1506
                 WTP 1.0
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>815705</comment_id>
             <comment_count>4</comment_count>
             <who>Walter Harley</who>
             <when>2006-10-23 21:18:43 -0400</when>
-            <thetext>Just adding info as per request. Still happening in 3.3 (build I20061003-0800). Happens quite
+            <comment_text>Just adding info as per request. Still happening in 3.3 (build I20061003-0800). Happens quite
                 commonly as I'm editing javadoc, but still with no pattern that I can discern, and never when I'm trying
                 to make it happen :-(
 
@@ -326,68 +335,68 @@
 
                 My machine is a Dell with two hyperthreaded Xeon processors, so it appears to the OS (WinXP SP2) as a
                 four-processor machine. Video is "NVIDIA Quadro NVS with AGP8X".
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>923229</comment_id>
             <comment_count>5</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-04-04 10:57:11 -0400</when>
-            <thetext>Walter, you added this to the polish list. I can't do anything until I can reproduice myself.
+            <comment_text>Walter, you added this to the polish list. I can't do anything until I can reproduice myself.
                 Sorry.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>923764</comment_id>
             <comment_count>6</comment_count>
             <who>Walter Harley</who>
             <when>2007-04-04 15:49:10 -0400</when>
-            <thetext>It has been reported here by at least three people. The bug badly impairs an otherwise very useful
-                feature, during normal development usage, so it seems like something that is worth "polish" attention.
-                My hope was that maybe if some attention was directed to the bug we could make some progress on it. Even
-                you can't reproduce it locally, perhaps it is worth some dev time to either consider what the possible
-                causes might be, or consider whether there is logging or tracing code that could be added to help track
-                it down.
+            <comment_text>It has been reported here by at least three people. The bug badly impairs an otherwise very
+                useful feature, during normal development usage, so it seems like something that is worth "polish"
+                attention. My hope was that maybe if some attention was directed to the bug we could make some progress
+                on it. Even you can't reproduce it locally, perhaps it is worth some dev time to either consider what
+                the possible causes might be, or consider whether there is logging or tracing code that could be added
+                to help track it down.
 
                 Are you guys using dual-processor machines? I strongly suspect this is a threading issue, so it might
                 not ever appear on single-processor machines.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>923788</comment_id>
             <comment_count>7</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-04-04 15:59:11 -0400</when>
-            <thetext>I tried on our Linux box which is a real 2 processor machine. If you can provide steps that are
-                closer to a reproducible case I can give it a try again.
-            </thetext>
+            <comment_text>I tried on our Linux box which is a real 2 processor machine. If you can provide steps that
+                are closer to a reproducible case I can give it a try again.
+            </comment_text>
         </comment>
         <comment>
             <comment_id>923817</comment_id>
             <comment_count>8</comment_count>
             <who>Walter Harley</who>
             <when>2007-04-04 16:19:17 -0400</when>
-            <thetext>I'll spend some time today trying to come up with a better repro. Maybe if I try hard enough that
-                will scare the bug out of existence :-)
-            </thetext>
+            <comment_text>I'll spend some time today trying to come up with a better repro. Maybe if I try hard enough
+                that will scare the bug out of existence :-)
+            </comment_text>
         </comment>
         <comment>
             <comment_id>923880</comment_id>
             <comment_count>9</comment_count>
-            <who>Walter Harley</who>
+            <who>Marcus Vinicius Freitas Margarites</who>
             <when>2007-04-04 17:15:14 -0400</when>
-            <thetext>It still happens to me, but, as Walter Harley said on comment #4, I am unable to define a pattern
-                of occurrences. But still, this is a very common bug.
+            <comment_text>It still happens to me, but, as Walter Harley said on comment #4, I am unable to define a
+                pattern of occurrences. But still, this is a very common bug.
 
 
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>926440</comment_id>
             <comment_count>10</comment_count>
             <who>Walter Harley</who>
             <when>2007-04-09 02:29:27 -0400</when>
-            <thetext>Created attachment 63236
+            <comment_text>Created attachment 63236
                 Another screenshot
 
                 Here's another screenshot showing a defective highlight. This one is in a file that contains no javadoc
@@ -397,49 +406,49 @@
 
                 I'm not sure what action I performed when the bad highlighting started - I've gotten so used to it
                 happening that it doesn't register at first. Still no evident pattern to what causes it.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>1007127</comment_id>
             <comment_count>11</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-06-22 09:59:25 -0400</when>
-            <thetext>Get rid of deprecated state.</thetext>
+            <comment_text>Get rid of deprecated state.</comment_text>
         </comment>
         <comment>
             <comment_id>1007492</comment_id>
             <comment_count>12</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-06-22 10:04:39 -0400</when>
-            <thetext>.</thetext>
+            <comment_text>.</comment_text>
         </comment>
         <comment>
             <comment_id>1100457</comment_id>
             <comment_count>13</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-11-14 05:31:43 -0500</when>
-            <thetext>We finally have a test case.</thetext>
+            <comment_text>We finally have a test case.</comment_text>
         </comment>
         <comment>
             <comment_id>1100460</comment_id>
             <comment_count>14</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-11-14 05:32:24 -0500</when>
-            <thetext>*** Bug 115553 has been marked as a duplicate of this bug. ***</thetext>
+            <comment_text>*** Bug 115553 has been marked as a duplicate of this bug. ***</comment_text>
         </comment>
         <comment>
             <comment_id>1100462</comment_id>
             <comment_count>15</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-11-14 05:32:40 -0500</when>
-            <thetext>*** Bug 209766 has been marked as a duplicate of this bug. ***</thetext>
+            <comment_text>*** Bug 209766 has been marked as a duplicate of this bug. ***</comment_text>
         </comment>
         <comment>
             <comment_id>1100464</comment_id>
             <comment_count>16</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-11-14 05:34:40 -0500</when>
-            <thetext>Given:
+            <comment_text>Given:
                 {
                 int variable= 10;
                 }
@@ -449,21 +458,24 @@
                 3. move cursor down &lt;-- important: move it to a place without Java element
                 Is:
                 i is orange rest is not updated, ever
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>1108960</comment_id>
             <comment_count>17</comment_count>
-            <who>Walter Harley</who>
+            <who>Dani Megert</who>
             <when>2007-11-28 12:30:58 -0500</when>
-            <thetext>I've committed a fix but we have to see whether it removes the occurrence marks too eagerly.
-            </thetext>
+            <comment_text>I've committed a fix but we have to see whether it removes the occurrence marks too eagerly.
+            </comment_text>
         </comment>
     </bug>
     <bug>
         <id>90725</id>
         <developer>Nick Edgar</developer>
         <dup_id/>
+        <creation_time>2005-04-07 17:30:00 -0400</creation_time>
+        <product>JDT</product>
+        <component>UI</component>
         <short_desc>TableColumn trim differs between platforms</short_desc>
         <thetext>build I20050405
 
@@ -474,15 +486,18 @@
         <comment>
             <comment_id>441747</comment_id>
             <comment_count>1</comment_count>
-            <who>Nick Edgar</who>
+            <who>Dirk Baeumer</who>
             <when>2005-05-02 10:22:19 -0400</when>
-            <thetext>Fixed.</thetext>
+            <comment_text>Fixed.</comment_text>
         </comment>
     </bug>
     <bug>
         <id>93634</id>
         <developer>Dirk Baeumer</developer>
         <dup_id/>
+        <creation_time>2005-05-04 08:12:00 -0400</creation_time>
+        <product>JDT</product>
+        <component>UI</component>
         <short_desc>[text edit] Try to share strings in undo object creation</short_desc>
         <thetext>Currently the text edit infrastructure reads the text to replace in a undo from
             the document. This has the downside that in massive name changes (e.g. rename,
@@ -493,36 +508,39 @@
             <comment_count>1</comment_count>
             <who>Dirk Baeumer</who>
             <when>2005-05-04 08:19:14 -0400</when>
-            <thetext>Created attachment 20672
+            <comment_text>Created attachment 20672
                 A patch for a simple string sharing
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>443067</comment_id>
             <comment_count>2</comment_count>
             <who>Dirk Baeumer</who>
             <when>2005-05-04 08:20:48 -0400</when>
-            <thetext>Tom, can you please release this to org.eclipse.text. I will drop by.</thetext>
+            <comment_text>Tom, can you please release this to org.eclipse.text. I will drop by.</comment_text>
         </comment>
         <comment>
             <comment_id>443092</comment_id>
             <comment_count>3</comment_count>
-            <who>Dirk Baeumer</who>
+            <who>Tom Hofmann</who>
             <when>2005-05-04 09:04:01 -0400</when>
-            <thetext>released &gt; 20050504</thetext>
+            <comment_text>released &gt; 20050504</comment_text>
         </comment>
         <comment>
             <comment_id>443332</comment_id>
             <comment_count>4</comment_count>
             <who>Dirk Baeumer</who>
             <when>2005-05-04 12:44:31 -0400</when>
-            <thetext>Closing as fixed.</thetext>
+            <comment_text>Closing as fixed.</comment_text>
         </comment>
     </bug>
     <bug>
         <id>111754</id>
         <developer>Juergen Weber</developer>
         <dup_id/>
+        <creation_time>2005-10-06 08:37:00 -0400</creation_time>
+        <product>JDT</product>
+        <component>UI</component>
         <short_desc>[open type] Open Type Dialog cannot be closed</short_desc>
         <thetext>Sometimes after entering anything in open type dialog, the dialog cannot be
             closed any more, neither with OK, Cancel or the Window close cross.
@@ -537,32 +555,32 @@
             <comment_count>1</comment_count>
             <who>Juergen Weber</who>
             <when>2005-10-06 08:45:07 -0400</when>
-            <thetext>Found a way to always reproduce it:
+            <comment_text>Found a way to always reproduce it:
 
                 Select another Java source buffer with the buffer selector &gt;&gt;
                 (which takes abnormally long, about 10s), this step is necessary.
 
                 Afterwards do C-S-T, after the Type is found (and not before), the dialog cannot
                 be closed any more.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>542965</comment_id>
             <comment_count>2</comment_count>
-            <who>Juergen Weber</who>
+            <who>Martin Aeschlimann</who>
             <when>2005-10-08 11:12:22 -0400</when>
-            <thetext>With source buffer you mean Javae editor?
+            <comment_text>With source buffer you mean Javae editor?
 
                 Can you start Eclipse form a console and press CTRL + break in the console when
                 this happens?
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>543680</comment_id>
             <comment_count>3</comment_count>
-            <who>Juergen Weber</who>
+            <who>Dirk Baeumer</who>
             <when>2005-10-11 08:44:08 -0400</when>
-            <thetext>Juergen, I can't reproduce the problem. Can you please provide more detailed
+            <comment_text>Juergen, I can't reproduce the problem. Can you please provide more detailed
                 steps (best a zipped workspace with some files revealing the problem).
                 Additionally can you please answer the following questions:
 
@@ -576,24 +594,24 @@
                 - are you using a different XML library (for example xerces) than the one
                 provided by the JDK. There is a know issue here which prevents the dialog
                 from closing in this case (see bug 106447)
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>543908</comment_id>
             <comment_count>4</comment_count>
             <who>Juergen Weber</who>
             <when>2005-10-11 13:00:15 -0400</when>
-            <thetext>After I rebootet XP I could not reproduce the bug for some time and then not
+            <comment_text>After I rebootet XP I could not reproduce the bug for some time and then not
                 always. I have a feeling it has something to do with the Clearcase plugin.
                 Anyway, the vm dump will show. But how do I create it in Windows XP?
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>543923</comment_id>
             <comment_count>5</comment_count>
-            <who>Juergen Weber</who>
+            <who>Dirk Baeumer</who>
             <when>2005-10-11 13:36:44 -0400</when>
-            <thetext>Start Eclipse using the following command from a Windows command prompt,
+            <comment_text>Start Eclipse using the following command from a Windows command prompt,
                 replacing eclipse_install and jdk_install with the path to the corresponding
                 installations on disk:
 
@@ -604,35 +622,35 @@
                 Ctrl+Break. This will print the VM dump to the command window. Please make sure
                 you increase the height of the screen buffer size via the properties dialog of
                 the command window (Layout tab) so that the dump will not be clipped.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>553887</comment_id>
             <comment_count>6</comment_count>
-            <who>Juergen Weber</who>
+            <who>Dirk Baeumer</who>
             <when>2005-10-31 06:30:00 -0500</when>
-            <thetext>Closing as works for me since I can't reproduce the bug. Juergen, if you can
+            <comment_text>Closing as works for me since I can't reproduce the bug. Juergen, if you can
                 provide the requested information please reopen.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567020</comment_id>
             <comment_count>7</comment_count>
             <who>Juergen Weber</who>
             <when>2005-11-18 07:55:23 -0500</when>
-            <thetext>Created attachment 30219
+            <comment_text>Created attachment 30219
                 threaddump
 
                 D:\eclipse&gt;D:\eclipse\eclipse.exe -data D:\GBOBWorkspace -vm
                 D:\jdk1.5.0_05\bin\java.exe -vmargs -XX:+UseParallelGC -server
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567021</comment_id>
             <comment_count>8</comment_count>
             <who>Juergen Weber</who>
             <when>2005-11-18 07:55:42 -0500</when>
-            <thetext>OK, I could reproduce it (and had started eclipse from a console window, too 8-)
+            <comment_text>OK, I could reproduce it (and had started eclipse from a console window, too 8-)
 
                 I'll attach the thread dump.
 
@@ -735,14 +753,14 @@
                 at org.eclipse.core.launcher.Main.basicRun(Main.java:278)
                 at org.eclipse.core.launcher.Main.run(Main.java:973)
                 at org.eclipse.core.launcher.Main.main(Main.java:948)
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567033</comment_id>
             <comment_count>9</comment_count>
-            <who>Juergen Weber</who>
+            <who>Dirk Baeumer</who>
             <when>2005-11-18 08:22:17 -0500</when>
-            <thetext>Juergen,
+            <comment_text>Juergen,
 
                 thanks for providing the additional information.
 
@@ -753,28 +771,28 @@
                 I can't do anything against the misconfiguration, however I added protection
                 code to the dialog that it closes even if this situation occurs. The protection
                 code went into 3.2 M3.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567371</comment_id>
             <comment_count>10</comment_count>
             <who>Juergen Weber</who>
             <when>2005-11-18 12:50:48 -0500</when>
-            <thetext>But how can I as user misconfigure the XML parser? Eclipse JDT is supposed to
+            <comment_text>But how can I as user misconfigure the XML parser? Eclipse JDT is supposed to
                 come with all the plugins it needs, so if the parser fails, it is a bug in the
                 eclipse product (either for not delivering a parser or not configuring it right).
 
                 But if it is a misconfigurion induced by me, it is still a bug of Eclipse,
                 because the plugin system is supposed to shield the plugins from each other, so
                 my user plugins are not to affect JDT plugins.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567386</comment_id>
             <comment_count>11</comment_count>
-            <who>Juergen Weber</who>
+            <who>Dirk Baeumer</who>
             <when>2005-11-18 13:04:19 -0500</when>
-            <thetext>No, since Eclipse 3.0 we don't have our own XML parser anymore. We take the one
+            <comment_text>No, since Eclipse 3.0 we don't have our own XML parser anymore. We take the one
                 that is part of the JDK installation.
 
                 There are two ways to overrule the default parser:
@@ -786,39 +804,39 @@
                 that causes the problem. And this is not under Eclipse SDK control.
 
                 Do you have an additional weblogic plug-in installed ?
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567387</comment_id>
             <comment_count>12</comment_count>
-            <who>Juergen Weber</who>
+            <who>Dirk Baeumer</who>
             <when>2005-11-18 13:06:30 -0500</when>
-            <thetext>Regarding your point: "the plugin system is supposed to shield"
+            <comment_text>Regarding your point: "the plugin system is supposed to shield"
 
                 This is not possible since the plug of a XML parser happens on JDK level over
                 which we don't have control. We only shield plug-ins against each other.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567391</comment_id>
             <comment_count>13</comment_count>
             <who>Juergen Weber</who>
             <when>2005-11-18 13:13:59 -0500</when>
-            <thetext>(In reply to comment #11)
+            <comment_text>(In reply to comment #11)
 
                 I did not have a weblogic plug-in installed, but I was remote debugging a WLS
                 EJB and running a local WLS client (from a Java project with weblogic.jar in the
                 classpath) in the console.
                 If that is the reason for another XML parser being drawn in, this is a too easy
                 way to break JDT and should be fixed.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>567448</comment_id>
             <comment_count>14</comment_count>
-            <who>Juergen Weber</who>
+            <who>Dirk Baeumer</who>
             <when>2005-11-18 14:00:01 -0500</when>
-            <thetext>As you can see the from the stack trace produced by Eclipse the weblogic XML
+            <comment_text>As you can see the from the stack trace produced by Eclipse the weblogic XML
                 parser is available inside the Eclipse VM.
 
                 If you don't have an additional plug-in install in Eclipse then the only way
@@ -832,15 +850,15 @@
 
                 If then there is still the web logic XML parser available in the Eclipse VM
                 there is really something strange.
-            </thetext>
+            </comment_text>
         </comment>
         <comment>
             <comment_id>568726</comment_id>
             <comment_count>15</comment_count>
             <who>Juergen Weber</who>
             <when>2005-11-21 08:06:50 -0500</when>
-            <thetext>weblogic.jar is nowhere on the eclipse classpath, only on the classpath of a java project within
-                eclipse.
+            <comment_text>weblogic.jar is nowhere on the eclipse classpath, only on the classpath of a java project
+                within eclipse.
 
                 I could imagine that on running the project once, weblogic.jar somehow sets the system property
                 javax.xml.transform.TransformerFactory which javax.xml.transform.TransformerFactory.newInstance() uses.
@@ -854,13 +872,16 @@
                 {
                 OpenTypeDialog();
                 }
-            </thetext>
+            </comment_text>
         </comment>
     </bug>
     <bug>
         <id>86252</id>
         <developer>David Audel</developer>
         <dup_id/>
+        <creation_time>2005-02-23 07:49:00 -0500</creation_time>
+        <product>JDT</product>
+        <component>Text</component>
         <short_desc>[content asssist] New completion kind CompletionProposal.ANNOTATION_ATTRIBUTE_REF</short_desc>
         <thetext>I released a new completion kind in Jdtcore/head:
             CompletionProposal.ANNOTATION_ATTRIBUTE_REF
@@ -919,1301 +940,9 @@
         <comment>
             <comment_id>442497</comment_id>
             <comment_count>1</comment_count>
-            <who>David Audel</who>
+            <who>Tom Hofmann</who>
             <when>2005-05-03 09:57:25 -0400</when>
-            <thetext>has been fixed a while ago.</thetext>
-        </comment>
-    </bug>
-    <bug>
-        <id>94452</id>
-        <developer>Darin Wright</developer>
-        <dup_id/>
-        <short_desc>Timeout exceptions</short_desc>
-        <thetext>I20050509-2010
-
-            I am able to produce timeout exceptions by stepping in a method while a
-            logical structure is displayed for a Vector. Stepping quickly - allow the UI
-            to start to update and then step again - seems to cause the problem. I am not
-            holding down the step key. This may be flooding the target with requests as
-            the views are attempting to update as the next step starts.
-        </thetext>
-        <comment>
-            <comment_id>454734</comment_id>
-            <comment_count>1</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-05-18 08:56:31 -0400</when>
-            <thetext>*** Bug 95707 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>464286</comment_id>
-            <comment_count>2</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-05-30 12:20:27 -0400</when>
-            <thetext>It may be possible that multiple threads are waiting for a JDWP reply. When a
-                reply packet is received a notifyAll() is performed in the receive manager
-                which will let one thread check the reply packet queue. If the reply is not
-                for the thread that was waiting, it goes into a wait again, but does not
-                notify to allow another waiting thread to check the reply queue.
-
-                By putting a notifyAll() before waiting for a packet, I no longer get timeout
-                exceptions. This allows any other waiting threads to check the queue.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>466043</comment_id>
-            <comment_count>3</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-05-31 16:37:59 -0400</when>
-            <thetext>False lead - the notifyAll performed when a reply packet is received should
-                have the desired effect of waking all waiting threads.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>466833</comment_id>
-            <comment_count>4</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-01 11:16:47 -0400</when>
-            <thetext>A few findings:
-
-                * When invoking a method in the target VM to perform a 'toString()' or compute
-                a logical structure, we set the request timeout to infinite. This has the side
-                effect of causing other requests to the VM to use the infinite timeout as well
-                (if the requests come in while performing the method invocation). We should
-                only use the infinite timeout for methdod invocations.
-                * The timeouts that are occurring are somewhere between 3 and 5 seconds on my
-                machine. Increasing the timeout value reduces the occurrence of the problem.
-                * method invocations seem pretty quick - usually less than 10ms on my machine
-                * it appears that in my test case, ArrayReference.getValues() is timing out
-                the most.
-                * I can't get the problem to occurr on J9, only Sun VMs.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>466852</comment_id>
-            <comment_count>5</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-01 11:25:26 -0400</when>
-            <thetext>more notes:
-
-                * I'm not sure why "array.getValues" is timing out
-                * When I turn off logical structures and simply expand the raw list to show
-                its array, the timeout does not occurr as often
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>468476</comment_id>
-            <comment_count>6</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-02 14:03:39 -0400</when>
-            <thetext>*** Bug 94503 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>477631</comment_id>
-            <comment_count>7</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-13 09:35:46 -0400</when>
-            <thetext>*** Bug 98550 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>486140</comment_id>
-            <comment_count>8</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-20 16:59:00 -0400</when>
-            <thetext>Nothing planned for 3.1. We have no difinitive fixes. Note that the timeouts
-                seem to occurr on the Sun VM, but not on the IBM/J9 VM.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>486153</comment_id>
-            <comment_count>9</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-20 17:10:44 -0400</when>
-            <thetext>Why didn't the timeout happen with older versions of Eclipse? Or did they?</thetext>
-        </comment>
-        <comment>
-            <comment_id>486159</comment_id>
-            <comment_count>10</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-20 17:14:02 -0400</when>
-            <thetext>Timeouts did occurr in older versions of Eclipse, but not as fequently (at
-                least that's my impression). In 3.1, we do more work in background threads in
-                the debugger which may put extra demands on the target (i.e. more requests
-                coming from the front end at once). This may be the reason for the timeouts
-                (but the problem needs more investigation). As well, it's not clear to me why
-                the timeouts seem to occurr on Sun VMs, but not IBM VMs.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>486627</comment_id>
-            <comment_count>11</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-21 09:14:44 -0400</when>
-            <thetext>FYI, both IBM Sovereign and J9 VMs (at least have similar problem, they only
-                fail faster so you do not obviously notice the failure. The exception that you
-                get is
-
-                !ENTRY org.eclipse.jdt.debug 4 120 2005-06-21 09:09:24.672
-                !MESSAGE Internal error logged from JDI Debug:
-                !STACK 1
-                org.eclipse.debug.core.DebugException: Evaluation failed - thread not suspended.
-                at
-                org.eclipse.jdt.internal.debug.core.model.JDIDebugElement.throwDebugException(JDIDebugElement.java:200)
-                at
-                org.eclipse.jdt.internal.debug.core.model.JDIDebugElement.requestFailed(JDIDebugElement.java:158)
-                at
-                org.eclipse.jdt.internal.debug.core.model.JDIThread.runEvaluation(JDIThread.java:555)
-                at
-                org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine$EvalRunnable.run(ASTEvaluationEngine.java:389)
-                at
-                org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:2446)
-                at org.eclipse.core.internal.jobs.Worker.run(Worker.java:76)
-                !SUBENTRY 1 org.eclipse.jdt.debug 4 100 2005-06-21 09:09:24.672
-                !MESSAGE Evaluation failed - thread not suspended.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>486654</comment_id>
-            <comment_count>12</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-21 09:33:17 -0400</when>
-            <thetext>The failure in comment#11 is not a timeout - it shows an evaluation could not
-                complete because a thread was not suspended. The same happens on Sun VMs.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>487036</comment_id>
-            <comment_count>13</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-21 12:53:23 -0400</when>
-            <thetext>Additional info - the problem appears to happen on my hyper-threaded P4 3GHz
-                machine, but not my T30 laptop. As well, does not happen on Kevin's P4 2.6GHz
-                machine either.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>487109</comment_id>
-            <comment_count>14</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-21 13:38:29 -0400</when>
-            <thetext>Great - so much for having a nice machine!</thetext>
-        </comment>
-        <comment>
-            <comment_id>487411</comment_id>
-            <comment_count>15</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-21 16:55:58 -0400</when>
-            <thetext>Created attachment 23670
-                Patch allows to gather JDWP traffic info
-
-                Attaching a patch I used to gather some JDWP traffic info. Patch is just to
-                allow me to see what sort of messaging is going on with the target when a
-                timeout occurrs.
-
-                For my test case that causes the timeouts, I found we are usually retrieving
-                many values from an array individually. A quick hack that coallesses the
-                retrieval of values (100 at a time) makes the timeout problem disappear
-                (however, my hack was not robust).
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>488681</comment_id>
-            <comment_count>16</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-22 17:44:42 -0400</when>
-            <thetext>Created attachment 23787
-                patch to measure thru put
-
-                additional stat gathering code
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>488684</comment_id>
-            <comment_count>17</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-22 17:48:14 -0400</when>
-            <thetext>We tested the hypothesis that we were flooding the VM with JDWP requests. The
-                Sun VM seemed to peak at handling about 1350 requests per second, and J9
-                peaked at about 2800 requests per second. However, simply sending requests
-                across the wire as fast as possible did not cause timeouts to occurr. Only
-                when the requests were interleaved from different threads did the timeouts
-                occurr.
-
-                We then found that when we synchronized request sending with response
-                receiving that the timeouts did not occurr. I.e. don't send request 2 until
-                response 1 is received (or times out).
-
-                I will attach a binary plug-in with the 'synch' behavior that users may test
-                and provide feedback with.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>488689</comment_id>
-            <comment_count>18</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-22 17:52:46 -0400</when>
-            <thetext>Created attachment 23788
-                zip of replacement org.eclipse.jdt.debug plug-in
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>488694</comment_id>
-            <comment_count>19</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-22 18:00:18 -0400</when>
-            <thetext>Additional note - the fix is quite simple in terms of code. We only allow one
-                thread to send and wait for a reply at once. There is only one place in our
-                JDI client where this happens, so we can create a synchronized block around
-                the send/receive on a global lock object. This still allows events to be
-                received from the VM at the same time (so sending a request does not interfere
-                with events being fired from the VM). To our knowledge, we don't know of any
-                situation where one JDWP request relies on another to be sent at the same time
-                (i.e. potential for deadlock).
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>488699</comment_id>
-            <comment_count>20</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-22 18:03:15 -0400</when>
-            <thetext>Created attachment 23789
-                Code patch for org.eclipse.jdt.debug
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>489064</comment_id>
-            <comment_count>21</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-23 08:46:27 -0400</when>
-            <thetext>*** Bug 101430 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>489129</comment_id>
-            <comment_count>22</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-23 09:49:21 -0400</when>
-            <thetext>I have a test case that floods a target from three separate threads for
-                requests to get values from an array iteratively. The tests fail on Sun and J9
-                VMs without the synch fix. With the synch fix, all VMs pass the test.
-
-                The strange thing is that the JDWP spec explicitly claims to be async: "The
-                JDWP is asynchronous; multiple command packets may be sent before the first
-                reply packet is received."
-
-                In practice, this does not seem to be the case.
-
-                I have modified my original patch to have one "communication" lock per VM
-                rather than one communication lock for all VMs.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>489203</comment_id>
-            <comment_count>23</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-23 10:35:16 -0400</when>
-            <thetext>Targeting fix for 3.1.1. Synchronization change needs more testing in the
-                field (too late/risky to put into 3.1).
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>489266</comment_id>
-            <comment_count>24</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-23 11:07:01 -0400</when>
-            <thetext>Created attachment 23853
-                patch
-
-                Updated code patch that sync's per VM rather than for all VMs
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>489270</comment_id>
-            <comment_count>25</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-23 11:08:02 -0400</when>
-            <thetext>Created attachment 23855
-                Automated test (in progress)
-
-                A test that can be used to flood a target. Starting point for adding a test to
-                automated test suite.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>490069</comment_id>
-            <comment_count>26</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-23 20:57:58 -0400</when>
-            <thetext>I've been using the two patched versions of debug plugin for two days total and
-                didn't see any timeout exceptions or any other problems. My vote is for
-                including the fix in 3.1.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>490832</comment_id>
-            <comment_count>27</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-06-24 16:42:24 -0400</when>
-            <thetext>Created attachment 23975
-                Test using jdi client directly
-
-                Wrote a quick test that uses JDI directly instead of using Eclipse. Though JDI
-                will not timeout like Eclipse does, I have not yet seen any unreasonable
-                results from flooding the target this way (ie nothing approaching 3s). I've
-                tested on Windows/Sun 1.4.2 and OS X/Apple 1.4.2.
-
-                Notes:
-                -code needs tools.jar/classes.jar to compile and run.
-                -code cannot be run with eclipse's JDI client due to bug 101686
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>510816</comment_id>
-            <comment_count>28</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-07-28 12:12:46 -0400</when>
-            <thetext>Created attachment 25416
-                Project with stand alone JDI test
-
-                Zip of project with standalone JDI test that shows problem. Test uses three
-                threads to pound VM for values in an array. The VM appears to respond with
-                intermittent delays (that cause timeouts using Eclipse JDI client). Problem
-                occurss on P4 Hyper threaded machine with more fequency. Problem occurrs more
-                fequently on Sun VM than IBM J9 VM.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>530875</comment_id>
-            <comment_count>29</comment_count>
-            <who>Darin Wright</who>
-            <when>2005-09-14 10:55:26 -0400</when>
-            <thetext>Nothing planned for 3.1.1 as we have no difinitive fix available. Marking as
-                3.2.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>654277</comment_id>
-            <comment_count>30</comment_count>
-            <who>Darin Wright</who>
-            <when>2006-03-30 15:47:43 -0500</when>
-            <thetext>Deferred. This problem occurrs less often using current 3.2 builds (perhaps because we use
-                SWT.VIRTUAL trees, and create less labels/less requests on the target).
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>1583092</comment_id>
-            <comment_count>31</comment_count>
-            <who>Darin Wright</who>
-            <when>2009-08-30 02:13:15 -0400</when>
-            <thetext>As of now 'LATER' and 'REMIND' resolutions are no longer supported.
-                Please reopen this bug if it is still valid for you.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2280321</comment_id>
-            <comment_count>32</comment_count>
-            <who>Darin Wright</who>
-            <when>2013-07-03 13:33:17 -0400</when>
-            <thetext>Reopening. I still see the odd one of these every now and again.</thetext>
-        </comment>
-        <comment>
-            <comment_id>2280324</comment_id>
-            <comment_count>33</comment_count>
-            <who>Darin Wright</who>
-            <when>2013-07-03 13:34:14 -0400</when>
-            <thetext>*** Bug 197294 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2280326</comment_id>
-            <comment_count>34</comment_count>
-            <who>Darin Wright</who>
-            <when>2013-07-03 13:34:34 -0400</when>
-            <thetext>*** Bug 408100 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2280328</comment_id>
-            <comment_count>35</comment_count>
-            <who>Darin Wright</who>
-            <when>2013-07-03 13:36:27 -0400</when>
-            <thetext>*** Bug 412220 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2309247</comment_id>
-            <comment_count>36</comment_count>
-            <who>Darin Wright</who>
-            <when>2013-09-20 09:47:18 -0400</when>
-            <thetext>Got a whole list of these on 3.8. No idea whether they still occur on 4.x... Still marked as NEW?
-                Maybe set to CONFIRMED as there are so many people/duplicates?
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2309250</comment_id>
-            <comment_count>37</comment_count>
-            <who>Darin Wright</who>
-            <when>2013-09-20 09:48:19 -0400</when>
-            <thetext>Stacktrace in case it may help:
-
-                org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 53815.
-                at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:171)
-                at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:180)
-                at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:177)
-                at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:208)
-                at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:599)
-                at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:626)
-                at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1524)
-                at
-                org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:338)
-                at
-                org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:434)
-                at
-                org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:421)
-                at
-                org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:310)
-                at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1078)
-                at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-                at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1061)
-                at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:413)
-                at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2309261</comment_id>
-            <comment_count>38</comment_count>
-            <who>Darin Wright</who>
-            <when>2013-09-20 10:03:01 -0400</when>
-            <thetext>(In reply to Stijn de Witt from comment #36)
-                &gt; Got a whole list of these on 3.8. No idea whether they still occur on 4.x...
-                &gt; Still marked as NEW? Maybe set to CONFIRMED as there are so many
-                &gt; people/duplicates?
-
-                Thanks for the stacktrace, I have seen a couple of these in 4.x but not very often.
-
-                &gt; Still marked as NEW? Maybe set to CONFIRMED as there are so many
-                &gt; people/duplicates?
-
-                Its still "new" because no committers are working on it (and there is no "confirmed" state)
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2527249</comment_id>
-            <comment_count>39</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-03-05 11:51:36 -0500</when>
-            <thetext>*** Bug 461151 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2527252</comment_id>
-            <comment_count>40</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-03-05 11:52:26 -0500</when>
-            <thetext>*** Bug 444603 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2535677</comment_id>
-            <comment_count>41</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-03-23 04:54:00 -0400</when>
-            <thetext>*** Bug 462757 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2561779</comment_id>
-            <comment_count>42</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-05-11 14:20:08 -0400</when>
-            <thetext>*** Bug 466898 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2561781</comment_id>
-            <comment_count>43</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-05-11 14:20:34 -0400</when>
-            <thetext>*** Bug 466673 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2565878</comment_id>
-            <comment_count>44</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-05-21 01:35:26 -0400</when>
-            <thetext>*** Bug 467369 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2565880</comment_id>
-            <comment_count>45</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-05-21 01:35:49 -0400</when>
-            <thetext>*** Bug 467368 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>2597229</comment_id>
-            <comment_count>46</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-07-31 11:52:55 -0400</when>
-            <thetext>New Gerrit change created: https://git.eclipse.org/r/52978</thetext>
-        </comment>
-        <comment>
-            <comment_id>2597230</comment_id>
-            <comment_count>47</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-07-31 11:54:37 -0400</when>
-            <thetext>(In reply to Eclipse Genie from comment #46)
-                &gt; New Gerrit change created: https://git.eclipse.org/r/52978
-
-                Bug 171075 comment 7 patch introduced the TimeoutException if the
-                current thread is interrupted while waiting on packet. Interesting that
-                the original version of the patch haven't this side effect, see bug
-                171075 comment 4.
-
-                The proposal is to use original version of the patch, which does not
-                throw TimeoutException if the current thread is interrupted.
-
-                The reasoning is: the VirtualMachineImpl which creates "receiveThread"
-                do not uses interrupt() to communicate cancellation or for any other
-                reason. The possibility to interrupt waiting on the debuggee VM via
-                &lt;currentThread&gt;.interrupt() in not documented and is not part of the
-                public contract of PacketReceiveManager, it is only used internally. The
-                internal use of interrupt() is in PacketManager.disconnectVM(), and the
-                effect of call is not affected by this patch because the wait condition
-                is evaluated to false via VMIsDisconnected() after this call.
-
-                The only possible other callers of &lt;currentThread&gt;.interrupt() are
-                outside of jdt debug, and they do if for different reasons as to stop
-                waiting on reply from the debuggee VM.
-
-                Therefore reacting on &lt;currentThread&gt;.interrupt() with TimeoutException
-                causes unexpected side effects, as one can see for example in multiple
-                duplicated bugs for bug 94452. Most of this bugs are side-effects of
-                trying to interrupt current job thread or the hover computation thread
-                of TextViewerHoverManager. Additionally, if the current thread is UI
-                thread, it will be also interrupted by calling UISynchronizer.syncExec()
-                from a non-UI thread. In all this cases we don't want to see
-                TimeoutException, getReply() can probably finish successfully without
-                exception (at least one can see it in the debugger).
-
-                One also should notice, that interrupting a thread in getReply() do not
-                interrupt actual debuggee execution task, which will still proceed, it
-                will only let getReply() return before timeout occurs. Default timeout
-                is 3000 ms, so in worst case the clients which do explicitly set timeout
-                will wait 3 seconds more. In case clients set longer timeouts they
-                usually do not want explicit thread termination (like
-                JDIThread.invokeMethod() which is ready to wait as long as needed).
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2597510</comment_id>
-            <comment_count>48</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-08-02 23:11:23 -0400</when>
-            <thetext>Thanks Andrey for the Contribution.
-
-                @Mike,
-                Can you review this change ?
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2629220</comment_id>
-            <comment_count>49</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-20 03:48:28 -0400</when>
-            <thetext>I am able to provoke a timeout consistently. Eclipse Mars.1, Java 1.8.0_60, and a Tomcat 7.0
-                container. I'm willing to help in testing patches and/or collecting information.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2629235</comment_id>
-            <comment_count>50</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-20 04:26:31 -0400</when>
-            <thetext>(In reply to Jens Carlberg from comment #49)
-                &gt; I am able to provoke a timeout consistently. Eclipse Mars.1, Java 1.8.0_60,
-                &gt; and a Tomcat 7.0 container. I'm willing to help in testing patches and/or
-                &gt; collecting information.
-
-                Jens, not sure if you can get 4.6 nightly SDK build and apply the patch over it:
-                https://git.eclipse.org/r/52978?
-
-                @JDT debug team: could you please make the build artifacts of this build:
-                https://hudson.eclipse.org/platform/job/eclipse.jdt.debug-Gerrit/62/ accessible somewhere, so that
-                people can try the patch out? I honestly have no idea how I can produce an Eclipse SDK build with the
-                JDT patch applied to the 4.6 latest build state. Probably it would be good to allow gerrit instance to
-                share build artifacts, similar how egit it does, see for example
-                https://hudson.eclipse.org/egit/job/egit.gerrit/7743/ and the link on top to the build artifacts.
-
-                In the gerrit job configuration you have to check "Archive the artifacts" checkbox and add there the
-                path to the generated artifacts in target/repository/** directory. This way everyone can try out patch
-                builds.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2629289</comment_id>
-            <comment_count>51</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-20 07:24:17 -0400</when>
-            <thetext>(In reply to Andrey Loskutov from comment #50)
-                &gt;
-                &gt; In the gerrit job configuration you have to check "Archive the artifacts"
-                &gt; checkbox and add there the path to the generated artifacts in
-                &gt; target/repository/** directory. This way everyone can try out patch builds.
-
-                Hi Andrey,
-                I have set the "Archive the artifacts" and added the path but it results to build failure. I guess the
-                target/repository/ should pre exist.
-
-                Adding David.
-                @David,
-                If you are aware , how to set it ?
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2629292</comment_id>
-            <comment_count>52</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-20 07:28:30 -0400</when>
-            <thetext>(In reply to Sarika Sinha from comment #51)
-                &gt; (In reply to Andrey Loskutov from comment #50)
-                &gt; &gt;
-                &gt; &gt; In the gerrit job configuration you have to check "Archive the artifacts"
-                &gt; &gt; checkbox and add there the path to the generated artifacts in
-                &gt; &gt; target/repository/** directory. This way everyone can try out patch builds.
-                &gt;
-                &gt; Hi Andrey,
-                &gt; I have set the "Archive the artifacts" and added the path but it results to
-                &gt; build failure. I guess the target/repository/ should pre exist.
-
-                Arrgh, sorry for wrong pointer, probably jdt repo has different build artifacts location as egit. I
-                haven't expected this given the fact that maven usually enforces common rules where to place what.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2629694</comment_id>
-            <comment_count>53</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-21 01:52:56 -0400</when>
-            <thetext>(In reply to Sarika Sinha from comment #51)
-
-                &gt; Adding David.
-                &gt; @David,
-                &gt; If you are aware , how to set it ?
-
-                I do not know, for the Gerrit jobs. You can probably see if its even created, though, by browsing
-                through the 'workspace' of a job, right after it's built (and before next one starts, as 'workspace' is
-                usually cleaned at the the start of a build).
-
-                Then if it is created, that'd tell you how to 'archive' it.
-
-                If not created ... hmm, not sure how to do that either, right off, for the Gerrit jobs in question.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2629768</comment_id>
-            <comment_count>54</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-21 05:47:48 -0400</when>
-            <thetext>Gerrit change https://git.eclipse.org/r/52978 was merged to [master].
-                Commit:
-                http://git.eclipse.org/c/jdt/eclipse.jdt.debug.git/commit/?id=68b1a4edb3b87fe0561fca4d22a41b6f98f56ba2
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2629772</comment_id>
-            <comment_count>55</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-21 05:49:33 -0400</when>
-            <thetext>@Jens,
-                patch has been delivered. Can you try the next nightly build of Neon to see if it fixes the problem.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2630961</comment_id>
-            <comment_count>56</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-23 10:04:01 -0400</when>
-            <thetext>(In reply to Sarika Sinha from comment #55)
-                &gt; @Jens,
-                &gt; patch has been delivered. Can you try the next nightly build of Neon to see
-                &gt; if it fixes the problem.
-
-                Nope, no luck. I have tested two build for comparision, see below.
-
-                Setup used in both tests
-                ========================
-                * Tomcat 8.0.26
-                * JDK 1.8.0_60
-                * WAR-file deployed in Tomcat with application where I encounter the timeout
-                * Windows 7 Enterprise SP-1 64bits, 16GRAM, CPU Intel i7-2600
-                * Workspace with the source code for the WAR-file
-                * Chrome 46.0.2490.80 m (64-bit)
-                * Workspace with the application I need to debug, complete with breakpoint where the timeout occurs.
-
-                Tested builds
-                =============
-                eclipse-SDK-N20151019-2000-win32-x86_64
-                eclipse-SDK-N20151021-2000-win32-x86_64
-
-                Testing steps for both builds
-                =============================
-                * Start tomcat with jpda activated.
-                * Start eclipse.
-                * Goto debug perspective.
-                * Connect to dt_socket:localhost:8765 (stored debug configuration).
-                * In Chrome, surf to the application URL.
-                * Eclipse hits the breakpoint 1st time. I hit Resume.
-                * Eclipse hits the breakpoint 2nd time. I hit Resume. The timeout occurs.
-                * Disconnect in Eclipse. Timeout occurs.
-                * Chrome hangs, the Tomcat seems to not continue.
-                * The Tomcat java process does not terminate through it's own shutdown script, the process have to be
-                killed.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2630973</comment_id>
-            <comment_count>57</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-23 10:22:47 -0400</when>
-            <thetext>&gt; Tested builds
-                &gt; =============
-                &gt; eclipse-SDK-N20151019-2000-win32-x86_64
-                &gt; eclipse-SDK-N20151021-2000-win32-x86_64
-
-                I have now also tested eclipse-SDK-N20151022-2000-win32-x86_64 with the same result.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2630983</comment_id>
-            <comment_count>58</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-23 10:36:00 -0400</when>
-            <thetext>(In reply to Jens Carlberg from comment #57)
-                &gt; &gt; Tested builds
-                &gt; &gt; =============
-                &gt; &gt; eclipse-SDK-N20151019-2000-win32-x86_64
-                &gt; &gt; eclipse-SDK-N20151021-2000-win32-x86_64
-                &gt;
-                &gt; I have now also tested eclipse-SDK-N20151022-2000-win32-x86_64 with the same
-                &gt; result.
-
-                Do you have stack trace with TimeoutException, or any errors in the Eclipse log?
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2630996</comment_id>
-            <comment_count>59</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-23 10:46:21 -0400</when>
-            <thetext>Created attachment 257464
-                Log file from run with build 20151019, 20151021, 20151022
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2630997</comment_id>
-            <comment_count>60</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-23 10:47:01 -0400</when>
-            <thetext>I have attached the .metadata.log file from the workspace. It contains TimeoutExceptions for all
-                three tested builds.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2631234</comment_id>
-            <comment_count>61</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-24 03:35:55 -0400</when>
-            <thetext>(In reply to Jens Carlberg from comment #60)
-                &gt; I have attached the .metadata.log file from the workspace. It contains
-                &gt; TimeoutExceptions for all three tested builds.
-
-                Unfortunately your problem has probably a different root cause as one we've addressed with
-                https://git.eclipse.org/r/52978. In your case the timeout exception is thrown on the jdt debug bundle
-                shutdown (why???).
-
-                org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 659.
-                at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:193)
-                at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:204)
-                at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:192)
-                at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:268)
-                at org.eclipse.jdi.internal.VirtualMachineImpl.dispose(VirtualMachineImpl.java:692)
-                at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.disconnect(JDIDebugTarget.java:789)
-                at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.shutdown(JDIDebugTarget.java:1685)
-                at org.eclipse.jdt.internal.debug.core.JDIDebugPlugin.stop(JDIDebugPlugin.java:349)
-                at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
-                at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
-                at java.security.AccessController.doPrivileged(Native Method)
-                at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
-                at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:936)
-                at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:304)
-                at org.eclipse.osgi.container.Module.doStop(Module.java:621)
-                at org.eclipse.osgi.container.Module.stop(Module.java:483)
-                at
-                org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1623)
-                at
-                org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1542)
-                at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:248)
-                at
-                org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:137)
-                at org.eclipse.osgi.container.Module.doStop(Module.java:621)
-                at org.eclipse.osgi.container.Module.stop(Module.java:483)
-                at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:186)
-                at
-                org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:155)
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2632136</comment_id>
-            <comment_count>62</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-10-27 04:47:32 -0400</when>
-            <thetext>Moving to M4 for further testing and analysis</thetext>
-        </comment>
-        <comment>
-            <comment_id>2636453</comment_id>
-            <comment_count>63</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-11-06 00:43:19 -0500</when>
-            <thetext>It will be helpful if someone can try out and comment if recent patch has helped.</thetext>
-        </comment>
-        <comment>
-            <comment_id>2636461</comment_id>
-            <comment_count>64</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-11-06 02:00:31 -0500</when>
-            <thetext>(In reply to Sarika Sinha from comment #63)
-                &gt; It will be helpful if someone can try out and comment if recent patch has
-                &gt; helped.
-
-                It is not fair from me to answer (since I'm involved), but same patch applied on Eclipse 3.8.2 works
-                nicely for our automated tests and since we applied the patch we haven't observed a single timeout
-                exception. We run huge testsuite with various Eclipse tests ~60 times every day, with ~40 tests using
-                debugger/breakpoint interaction and so directly affected by the change. Before the patch we had at least
-                one (usually more) sporadic "Timeout" failure per day, and now they disappeared.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2647441</comment_id>
-            <comment_count>65</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-03 06:03:33 -0500</when>
-            <thetext>Resolving it have not received any related timeout exceptions. If some is able to reproduce please
-                reopen.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2647640</comment_id>
-            <comment_count>66</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-03 09:55:43 -0500</when>
-            <thetext>I'm not sure what the bug fix process is for the Eclipse JDT but will this fix be back ported to
-                Mars (4.5) and other recent releases? Or is there a plugin-patch I can pickup to use with Mars?
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2648050</comment_id>
-            <comment_count>67</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-04 05:36:59 -0500</when>
-            <thetext>New Gerrit change created: https://git.eclipse.org/r/61958</thetext>
-        </comment>
-        <comment>
-            <comment_id>2648061</comment_id>
-            <comment_count>68</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-04 05:42:44 -0500</when>
-            <thetext>(In reply to Eclipse Genie from comment #67)
-                &gt; New Gerrit change created: https://git.eclipse.org/r/61958
-
-                I've cherry picked the patch to the 4.5 maintenance branch.
-
-                (In reply to Warwick Burrows from comment #66)
-                &gt; I'm not sure what the bug fix process is for the Eclipse JDT but will this
-                &gt; fix be back ported to Mars (4.5) and other recent releases? Or is there a
-                &gt; plugin-patch I can pickup to use with Mars?
-
-                Now if we would want a backport to happen, we need:
-                1) +1 review from the developer
-                2) +1 for backport from component lead
-                3) this bug should be reopened and the target set to 4.5.2
-
-                @JDT Debug team: please decide if we want to backport this patch or not.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2648320</comment_id>
-            <comment_count>69</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-04 11:53:09 -0500</when>
-            <thetext>Thanks Andrey! Is it still possible to pickup nightly/stable builds of eclipse 4.5 maintenance
-                releases like it is with eclipse projects? I haven't done this for the IDE in quite a while and right
-                now I can't find the downloads page that would let me pickup a "nightly" or "stable" build of the next
-                Mars maintenance release that would have your fix in it.
-
-
-                (In reply to Andrey Loskutov from comment #68)
-                &gt; (In reply to Eclipse Genie from comment #67)
-                &gt; &gt; New Gerrit change created: https://git.eclipse.org/r/61958
-                &gt;
-                &gt; I've cherry picked the patch to the 4.5 maintenance branch.
-                &gt;
-                &gt; (In reply to Warwick Burrows from comment #66)
-                &gt; &gt; I'm not sure what the bug fix process is for the Eclipse JDT but will this
-                &gt; &gt; fix be back ported to Mars (4.5) and other recent releases? Or is there a
-                &gt; &gt; plugin-patch I can pickup to use with Mars?
-                &gt;
-                &gt; Now if we would want a backport to happen, we need:
-                &gt; 1) +1 review from the developer
-                &gt; 2) +1 for backport from component lead
-                &gt; 3) this bug should be reopened and the target set to 4.5.2
-                &gt;
-                &gt; @JDT Debug team: please decide if we want to backport this patch or not.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2648328</comment_id>
-            <comment_count>70</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-04 12:03:48 -0500</when>
-            <thetext>Sorry, ignore this I found the page so will watch for the next 4.5 build.
-
-
-                (In reply to Warwick Burrows from comment #69)
-                &gt; Thanks Andrey! Is it still possible to pickup nightly/stable builds of
-                &gt; eclipse 4.5 maintenance releases like it is with eclipse projects? I
-                &gt; haven't done this for the IDE in quite a while and right now I can't find
-                &gt; the downloads page that would let me pickup a "nightly" or "stable" build of
-                &gt; the next Mars maintenance release that would have your fix in it.
-                &gt;</thetext>
-        </comment>
-        <comment>
-            <comment_id>2648330</comment_id>
-            <comment_count>71</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-04 12:11:43 -0500</when>
-            <thetext>(In reply to Warwick Burrows from comment #70)
-                &gt; Sorry, ignore this I found the page so will watch for the next 4.5 build.
-
-                Please note that decision to backport is not made, the review is not merged, so do not waste your CPU
-                cycles watching the 4.5 maintenance nightly builds.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2648333</comment_id>
-            <comment_count>72</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-04 12:22:43 -0500</when>
-            <thetext>(In reply to Andrey Loskutov from comment #71)
-                &gt; (In reply to Warwick Burrows from comment #70)
-                &gt; &gt; Sorry, ignore this I found the page so will watch for the next 4.5 build.
-                &gt;
-                &gt; Please note that decision to backport is not made, the review is not merged,
-                &gt; so do not waste your CPU cycles watching the 4.5 maintenance nightly builds.
-
-                Oh ok, I misunderstood when you said:
-
-                &gt; I've cherry picked the patch to the 4.5 maintenance branch.
-
-                It gave the impression that you had applied the cherry picked fix to the 4.5 branch already.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2648694</comment_id>
-            <comment_count>73</comment_count>
-            <who>Darin Wright</who>
-            <when>2015-12-07 07:23:59 -0500</when>
-            <thetext>We are considering this for back porting to 4.5.2. Will like to wait for some more reviews from 4.6
-                M4 build.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2666351</comment_id>
-            <comment_count>74</comment_count>
-            <who>Darin Wright</who>
-            <when>2016-01-30 18:59:47 -0500</when>
-            <thetext>I am still experiencing this issue under 4.6M4.
-
-                I noticed that it happens to me only when the application creates a background thread that is separate
-                from the thread that I'm debugging/breaking. When I disable the background thread I do not have the
-                issue.
-
-                Also, I'm experiencing it on Windows 7 Ultimate 64bit. My colleague debugs the same project on a Mac
-                with no issues.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>2666971</comment_id>
-            <comment_count>75</comment_count>
-            <who>Darin Wright</who>
-            <when>2016-02-02 08:44:02 -0500</when>
-            <thetext>(In reply to Igal Sapir from comment #74)
-                &gt; I am still experiencing this issue under 4.6M4.
-                &gt;
-                &gt; I noticed that it happens to me only when the application creates a
-                &gt; background thread that is separate from the thread that I'm
-                &gt; debugging/breaking. When I disable the background thread I do not have the
-                &gt; issue.
-                &gt;
-                &gt; Also, I'm experiencing it on Windows 7 Ultimate 64bit. My colleague debugs
-                &gt; the same project on a Mac with no issues.
-
-                This bug is closed. If you see it, then please file a new bug with exact steps to reproduce it.
-            </thetext>
-        </comment>
-    </bug>
-    <bug>
-        <id>87493</id>
-        <developer>Tod Creasey</developer>
-        <dup_id/>
-        <short_desc>PackageExplorerPart#makeActions des a lot of work on startup [package explorer]</short_desc>
-        <thetext>M5a
-
-            When I restarted a workbench containing the following (collapsed) projects
-            loaded from HEAD:
-
-            org.eclipse.core.commands
-            org.eclipse.jface
-            org.eclipse.ui
-            org.eclipse.ui.ide
-            org.eclipse.ui.views
-            org.eclipse.ui.workbench
-
-            The method PackageExplorerPart#makeActions took 9.85% of my startup time (1881ms
-            in this case). About half of that was in the Refactor actions
-        </thetext>
-        <comment>
-            <comment_id>410133</comment_id>
-            <comment_count>1</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-03-09 08:57:12 -0500</when>
-            <thetext>We are aware of this. However the problem is an architectural problem in
-                Platform/UI which I discussed with Nick at EclipseCon. Since we have global menu
-                entries for all our actions we have to retarget them and initialize the right
-                enablement state. Otherwise short cuts will not work correctly or the enablement
-                state will not be correct if the global menu pops down.
-
-                We will look into improving this however there are no low hanging fruits ;-)
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>412224</comment_id>
-            <comment_count>2</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-03-14 10:00:56 -0500</when>
-            <thetext>Tobias, as discussed we should avoid that the refactoring actions load the
-                refactorings/processor to determine their enablement state.
-
-                Can you please add the improvement this will give to this PR. We can then decide
-                if it is worth doing anything else.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>412801</comment_id>
-            <comment_count>3</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-03-15 05:14:06 -0500</when>
-            <thetext>Profiling shows that a lot of time is spent to load the refactoring classes
-                for availability checking. Additionally, the empty IStructuredSelection on
-                startup could be handled more efficiently.
-                Extracted availability checking of all refactorings to a single class,
-                implemented early pruning on the selections to avoid java model access.
-                The performance gain is significant: On average, the refactor action group
-                needs 500ms less time to initialize itself.
-                Avoiding eager class-loading seems to be an easy way to shorten the startup
-                time in this case.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>413243</comment_id>
-            <comment_count>4</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-03-15 15:59:41 -0500</when>
-            <thetext>My profile of opening the JavaPerspective showed the following (I had already
-                touched the plug-in by selecting the preference page while in the resource
-                perspective).
-
-                Of the 3.456 seconds it took to open the Java Perspective 1.767 (51%) of them
-                were taken in the PackageExplorerActionGroup constructor. Refactor was about a
-                quarter of this time.
-
-                I will attack the profilers trace
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>413244</comment_id>
-            <comment_count>5</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-03-15 16:00:11 -0500</when>
-            <thetext>Created attachment 18807
-                Trace of opening the Java Perspective
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>413246</comment_id>
-            <comment_count>6</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-03-15 16:00:43 -0500</when>
-            <thetext>Created attachment 18808
-                Trace with content type corrected
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>425467</comment_id>
-            <comment_count>7</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-04-06 06:04:55 -0400</when>
-            <thetext>Tobias, as discussed we should create a trace to further understand what classes
-                are loaded during package explorer startup. May be there are some additional low
-                hanging fruits.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>431537</comment_id>
-            <comment_count>8</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-04-15 04:47:41 -0400</when>
-            <thetext>Avoided bundle loading of LTK Core/UI
-                Implemented cut to avoid eager class loading during byte code verification
-
-                Fixed &gt; 20050414
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>433001</comment_id>
-            <comment_count>9</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-04-18 15:20:13 -0400</when>
-            <thetext>What sort of performance gain does this give us?</thetext>
-        </comment>
-        <comment>
-            <comment_id>433382</comment_id>
-            <comment_count>10</comment_count>
-            <who>Tod Creasey</who>
-            <when>2005-04-19 04:34:33 -0400</when>
-            <thetext>On my machine P4 3Ghz 768 MB I measured the following for the package explorer
-                open test, on clean installations and fresh workspaces:
-
-                3.0.2: 1.75s CPU Time
-                I20050413-0910: 900ms CPU Time
-
-                I am not sure why these numbers are not reflected in the performance tests
-                (this has perhaps something to do with the downgrading of the windows test
-                machines?)
-            </thetext>
-        </comment>
-    </bug>
-    <bug>
-        <id>88941</id>
-        <developer>Nick Edgar</developer>
-        <dup_id/>
-        <short_desc>[Dialogs] CCE on ContainerCheckedTreeViewer in OverrideMethodDialog</short_desc>
-        <thetext>build I20050323 + latest UI and JDT UI from head
-
-            - In a java editor, chose Source &gt; Override/Implement methods
-
-            !ENTRY org.eclipse.ui 4 4 2005-03-23 16:54:47.117
-            !MESSAGE Unhandled event loop exception
-
-            !ENTRY org.eclipse.ui 4 0 2005-03-23 16:54:47.157
-            !MESSAGE org/eclipse/ui/dialogs/ContainerCheckedTreeViewer incompatible with
-            org/eclipse/ui/internal/dialogs/ContainerCheckedTreeViewer
-            !STACK 0
-            java.lang.ClassCastException: org/eclipse/ui/dialogs/ContainerCheckedTreeViewer
-            incompatible with org/eclipse/ui/internal/dialogs/ContainerCheckedTreeViewer
-            at
-            org.eclipse.jdt.internal.ui.dialogs.OverrideMethodDialog$OverrideMethodContentProvider.inputChanged(OverrideMethodDialog.java:186)
-            at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:244)
-            at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1324)
-            at
-            org.eclipse.ui.dialogs.CheckedTreeSelectionDialog.createTreeViewer(CheckedTreeSelectionDialog.java:316)
-            at
-            org.eclipse.jdt.internal.ui.dialogs.OverrideMethodDialog.createTreeViewer(OverrideMethodDialog.java:356)
-            at
-            org.eclipse.jdt.internal.ui.dialogs.SourceActionDialog.createDialogArea(SourceActionDialog.java:358)
-            at org.eclipse.jface.dialogs.Dialog.createContents(Dialog.java:685)
-            at org.eclipse.jface.window.Window.create(Window.java:416)
-            at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:994)
-            at
-            org.eclipse.ui.dialogs.SelectionStatusDialog.create(SelectionStatusDialog.java:149)
-            at
-            org.eclipse.ui.dialogs.CheckedTreeSelectionDialog.access$superCreate(CheckedTreeSelectionDialog.java:232)
-            at
-            org.eclipse.ui.dialogs.CheckedTreeSelectionDialog.access$0(CheckedTreeSelectionDialog.java:231)
-            at
-            org.eclipse.ui.dialogs.CheckedTreeSelectionDialog$1.run(CheckedTreeSelectionDialog.java:257)
-            at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:69)
-            at
-            org.eclipse.ui.dialogs.CheckedTreeSelectionDialog.create(CheckedTreeSelectionDialog.java:255)
-            at
-            org.eclipse.jdt.internal.ui.dialogs.SourceActionDialog.create(SourceActionDialog.java:501)
-            at org.eclipse.jface.window.Window.open(Window.java:768)
-            at
-            org.eclipse.ui.dialogs.CheckedTreeSelectionDialog.open(CheckedTreeSelectionDialog.java:227)
-            at
-            org.eclipse.jdt.ui.actions.OverrideMethodsAction.run(OverrideMethodsAction.java:199)
-            at
-            org.eclipse.jdt.ui.actions.OverrideMethodsAction.run(OverrideMethodsAction.java:181)
-            at
-            org.eclipse.jdt.ui.actions.SelectionDispatchAction.dispatchRun(SelectionDispatchAction.java:216)
-            at
-            org.eclipse.jdt.ui.actions.SelectionDispatchAction.run(SelectionDispatchAction.java:188)
-            at org.eclipse.jface.action.Action.runWithEvent(Action.java:1003)
-            at
-            org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:557)
-            at
-            org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:507)
-            at
-            org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:421)
-            at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:82)
-            at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:842)
-            at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:2894)
-            at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2527)
-            at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:1571)
-            at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:1535)
-            at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:312)
-            at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:143)
-            at org.eclipse.ui.internal.ide.IDEApplication.run(IDEApplication.java:103)
-            at
-            org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:228)
-            at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:338)
-            at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:151)
-            at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-            at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:85)
-            at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:58)
-            at
-            sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:60)
-            at java.lang.reflect.Method.invoke(Method.java:391)
-            at org.eclipse.core.launcher.Main.invokeFramework(Main.java:268)
-            at org.eclipse.core.launcher.Main.basicRun(Main.java:260)
-            at org.eclipse.core.launcher.Main.run(Main.java:887)
-            at org.eclipse.core.launcher.Main.main(Main.java:871)
-        </thetext>
-        <comment>
-            <comment_id>417879</comment_id>
-            <comment_count>1</comment_count>
-            <who>Nick Edgar</who>
-            <when>2005-03-23 16:58:14 -0500</when>
-            <thetext>Not sure if it's JDT or UI. Moving to highest level component.</thetext>
-        </comment>
-        <comment>
-            <comment_id>417949</comment_id>
-            <comment_count>2</comment_count>
-            <who>Nick Edgar</who>
-            <when>2005-03-23 18:20:46 -0500</when>
-            <thetext>Martin, there are still three references to the internal dialog in
-
-                NewTestCaseCreationWizardPage2
-                OverrideMethodDialog
-                WhiteSpaceTabPage
-
-                Can you please take care of this for the warm-up build.
-            </thetext>
-        </comment>
-        <comment>
-            <comment_id>418037</comment_id>
-            <comment_count>3</comment_count>
-            <who>Nick Edgar</who>
-            <when>2005-03-24 04:08:46 -0500</when>
-            <thetext>*** Bug 88928 has been marked as a duplicate of this bug. ***</thetext>
-        </comment>
-        <comment>
-            <comment_id>418051</comment_id>
-            <comment_count>4</comment_count>
-            <who>Nick Edgar</who>
-            <when>2005-03-24 05:01:40 -0500</when>
-            <thetext>Fixed for M6 warmup</thetext>
+            <comment_text>has been fixed a while ago.</comment_text>
         </comment>
     </bug>
 </bugs>

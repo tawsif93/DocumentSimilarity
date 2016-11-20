@@ -11,13 +11,19 @@ public class Bug {
 	private int developerRepositoryIndex;
 	private String shortDecription;
 	private String longDecription;
+	private String bugTime;
 	private ArrayList<Comment> comments;
 	private ArrayList<Integer> connectedDevelopersRepositoryIndex;
 
-	public Bug(String bugID, String shortDecription, String longDecription, ArrayList<Comment> comments) {
+	public Bug(String bugID, String shortDecription, String longDecription, String bugTime, ArrayList<Comment> comments) {
 		this.bugID = bugID;
+		this.bugTime = bugTime;
 		this.shortDecription = shortDecription;
 		this.longDecription = longDecription;
 		this.comments = comments;
+	}
+
+	public String getBugID() {
+		return bugID;
 	}
 }

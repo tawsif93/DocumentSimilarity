@@ -20,7 +20,7 @@ import java.util.List;
 public class BugReader {
 	private Stemmer stemmer;
 
-	ArrayList<NetworkLink> HN;
+	private ArrayList<NetworkLink> HN;
 
 	public BugReader() {
 		HN = new ArrayList<>();
@@ -65,15 +65,15 @@ public class BugReader {
 					String description = bugNodeElement.getElementsByTagName("thetext").item(0).getTextContent();
 					String product = bugNodeElement.getElementsByTagName("product").item(0).getTextContent();
 					String component = bugNodeElement.getElementsByTagName("component").item(0).getTextContent();
-
+					String creationTime = bugNodeElement.getElementsByTagName("creation_time").item(0).getTextContent();
 
 					NodeList commentsNode = bugNodeElement.getElementsByTagName("comment");
 					NodeList historyElements = history_node_element.getElementsByTagName("element");
 
-					for (int i = 1; i < historyElements.getLength(); i++) {
-						Node element = historyElements.item(i);
-						System.out.println("History " + ((Element) element).getElementsByTagName("who").item(0).getTextContent());
-					}
+//					for (int i = 1; i < historyElements.getLength(); i++) {
+//						Node element = historyElements.item(i);
+//						System.out.println("History " + ((Element) element).getElementsByTagName("who").item(0).getTextContent());
+//					}
 
 					ArrayList<Comment> commentArrayList = new ArrayList<>();
 
@@ -84,18 +84,17 @@ public class BugReader {
 						String commentCount = commentDetails.getElementsByTagName("comment_count").item(0).getTextContent();
 						String developerName = commentDetails.getElementsByTagName("who").item(0).getTextContent();
 						String commentTime = commentDetails.getElementsByTagName("when").item(0).getTextContent();
-						String commentText = commentDetails.getElementsByTagName("text").item(0).getTextContent();
+						String commentText = commentDetails.getElementsByTagName("comment_text").item(0).getTextContent();
 
 						Comment newComment = new Comment(commentID, commentCount, commentTime, commentText);
 						commentArrayList.add(newComment);
 					}
 
-
 					/*
 					 *  Creating Network node using Type declaration
 					 *  Adding network nodes
 					 */
-					Bug newBug = new Bug(bugID, summary, description, commentArrayList);
+					Bug newBug = new Bug(bugID, summary, description, creationTime, commentArrayList);
 					Developer bugDeveloper = new Developer(name);
 
 					NetworkNode bugNetworkNode = new NetworkNode("B", newBug);
@@ -144,7 +143,7 @@ public class BugReader {
 						String commentCount = commentDetails.getElementsByTagName("comment_count").item(0).getTextContent();
 						String developerName = commentDetails.getElementsByTagName("who").item(0).getTextContent();
 						String commentTime = commentDetails.getElementsByTagName("when").item(0).getTextContent();
-						String commentText = commentDetails.getElementsByTagName("text").item(0).getTextContent();
+						String commentText = commentDetails.getElementsByTagName("comment_text").item(0).getTextContent();
 
 						Comment newComment = new Comment(commentID, commentCount, commentTime, commentText);
 
@@ -207,6 +206,7 @@ public class BugReader {
 	}
 
 	public static void main(String[] args) {
-		new BugReader().parse("/home/peacefrog/Documents/DocumentSimilarity/src/main/java/multiple_developer/sample_data/sample_bug.xml", "/home/peacefrog/Documents/DocumentSimilarity/src/main/java/multiple_developer/sample_data/sample_bug_history.xml");
+		BugReader reader = new BugReader();
+		reader.parse("/home/peacefrog/Desktop/data_test/finalData_2.xml", "//home/peacefrog/Desktop/data_test/test_JSoup.xml");
 	}
 }
