@@ -1,0 +1,872 @@
+<bugs>
+    <bug>
+        <bug_id>92009</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-20 12:28:38 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-20 12:28:38 EDT</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-20 12:39:49 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-20 12:39:49 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-20 12:39:49 EDT</when>
+            <what>Summary</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-22 12:34:56 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2006-06-07 09:56:47 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>90841</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-04-11 06:12:25 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-04-11 06:12:25 EDT</when>
+            <what>Component</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-11 06:18:34 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-11 06:18:34 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-11 06:18:34 EDT</when>
+            <what>Severity</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-11 06:18:34 EDT</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-11 06:18:34 EDT</when>
+            <what>Summary</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-11 06:18:34 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-04-13 04:46:21 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>aeschli</who>
+            <when>2005-04-13 09:47:25 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>aeschli</who>
+            <when>2005-04-13 09:47:25 EDT</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>105738</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-08-02 04:44:13 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-08-02 04:44:13 EDT</when>
+            <what>Component</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-08-04 08:42:46 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-08-04 08:42:46 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>marcus.margarites</who>
+            <when>2005-12-30 06:23:05 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>david_williams</who>
+            <when>2006-10-23 21:40:47 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-06-22 09:59:25 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-06-22 09:59:25 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-06-22 10:04:39 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-06-22 10:04:39 EDT</when>
+            <what>Keywords</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-06-22 10:04:39 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:31:43 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:31:43 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:31:43 EST</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:32:24 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:32:40 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:34:40 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:34:40 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:34:40 EST</when>
+            <what>Keywords</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:34:40 EST</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:34:40 EST</when>
+            <what>Summary</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-14 05:34:40 EST</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-28 12:20:47 EST</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-28 12:20:47 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-28 12:30:58 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2007-11-28 12:30:58 EST</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>90725</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-04-08 04:29:33 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-04-08 04:29:33 EDT</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-04-08 04:29:33 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-02 10:22:19 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-02 10:22:19 EDT</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>93634</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-04 08:12:58 EDT</when>
+            <what>Keywords</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-04 08:12:58 EDT</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-04 08:12:58 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-04 08:20:48 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-04 12:44:31 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-05-04 12:44:31 EDT</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>111754</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>aeschli</who>
+            <when>2005-10-08 11:12:22 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>aeschli</who>
+            <when>2005-10-08 11:12:22 EDT</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-10-11 08:45:22 EDT</when>
+            <what>Summary</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-10-31 06:30:00 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-10-31 06:30:00 EST</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>juergen</who>
+            <when>2005-11-18 07:55:42 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>juergen</who>
+            <when>2005-11-18 07:55:42 EST</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-11-18 08:22:17 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-11-18 08:22:17 EST</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>86252</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-02-23 09:19:54 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-02-23 09:19:54 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-02-23 09:19:54 EST</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-02-23 09:19:54 EST</when>
+            <what>Summary</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2005-02-23 09:19:54 EST</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>eclipse</who>
+            <when>2005-05-03 09:57:25 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>eclipse</who>
+            <when>2005-05-03 09:57:25 EDT</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>94452</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-11 16:48:39 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-11 16:48:39 EDT</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-11 16:48:39 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-13 14:09:51 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-13 15:25:44 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-13 15:25:44 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-13 15:25:57 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-18 08:56:31 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-18 22:00:00 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-30 12:20:27 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-05-30 12:20:27 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-01 13:59:41 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-02 14:03:37 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-13 09:35:45 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-20 16:59:00 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-20 16:59:00 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-23 08:46:26 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-23 09:49:21 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-23 09:49:21 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-23 10:35:16 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-23 10:35:16 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-06-23 11:07:01 EDT</when>
+            <what>&lt;a href="attachment.cgi?id=23789"&gt; Attachment #23789&lt;/a&gt; Attachment is obsolete</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2005-09-14 10:55:26 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>john_hawksley</who>
+            <when>2006-03-09 10:14:04 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2006-03-30 15:47:43 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2006-03-30 15:47:43 EST</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>darin.eclipse</who>
+            <when>2006-03-30 15:47:43 EST</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>denis.roy</who>
+            <when>2009-08-30 02:13:15 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>denis.roy</who>
+            <when>2009-08-30 02:13:15 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2013-07-03 13:33:17 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2013-07-03 13:33:17 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2013-07-03 13:33:17 EDT</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2013-07-03 13:33:35 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2013-07-03 13:34:14 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2013-07-03 13:34:34 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2013-07-03 13:36:27 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>StijnDeWitt</who>
+            <when>2013-09-20 09:47:18 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>jason.steenstrapickens</who>
+            <when>2014-01-14 22:22:19 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2015-03-05 11:51:36 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>Michael_Rennie</who>
+            <when>2015-03-05 11:52:26 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>bartoszpop</who>
+            <when>2015-05-26 07:08:19 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>genie</who>
+            <when>2015-07-31 11:52:55 EDT</when>
+            <what>See Also</what>
+        </element>
+        <element>
+            <who>loskutov</who>
+            <when>2015-07-31 11:54:37 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-08-02 23:11:23 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-08-02 23:11:23 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-08-02 23:11:23 EDT</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-08-02 23:11:23 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-08-02 23:11:23 EDT</when>
+            <what>Flags</what>
+        </element>
+        <element>
+            <who>jens.carlberg</who>
+            <when>2015-10-20 03:48:28 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>john.hawksley</who>
+            <when>2015-10-20 03:51:14 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>john.hawksley</who>
+            <when>2015-10-20 04:27:08 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-10-20 07:24:17 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>john_hawksley</who>
+            <when>2015-10-21 03:04:56 EDT</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>genie</who>
+            <when>2015-10-21 05:47:48 EDT</when>
+            <what>See Also</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-10-21 05:49:33 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-10-27 04:47:32 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-11-06 00:43:19 EST</when>
+            <what>Keywords</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-12-03 06:03:33 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-12-03 06:03:33 EST</when>
+            <what>Resolution</what>
+        </element>
+        <element>
+            <who>sarika.sinha</who>
+            <when>2015-12-03 06:03:33 EST</when>
+            <what>Flags</what>
+        </element>
+        <element>
+            <who>warwick_burrows</who>
+            <when>2015-12-03 09:55:43 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>genie</who>
+            <when>2015-12-04 05:36:59 EST</when>
+            <what>See Also</what>
+        </element>
+        <element>
+            <who>daniel_megert</who>
+            <when>2015-12-07 06:12:42 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>igal</who>
+            <when>2016-01-30 18:59:47 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>loskutov</who>
+            <when>2016-10-17 10:44:34 EDT</when>
+            <what>See Also</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>87493</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>Tod_Creasey</who>
+            <when>2005-03-09 08:47:21 EST</when>
+            <what>Keywords</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-09 08:57:12 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-14 10:00:56 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-14 10:00:56 EST</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-14 10:00:56 EST</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-14 10:00:56 EST</when>
+            <what>Summary</what>
+        </element>
+        <element>
+            <who>Tod_Creasey</who>
+            <when>2005-03-15 16:00:55 EST</when>
+            <what>&lt;a href="attachment.cgi?id=18807"&gt; Attachment #18807&lt;/a&gt; Attachment is obsolete</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-04-06 06:04:55 EDT</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>tobias_widmer</who>
+            <when>2005-04-15 04:47:41 EDT</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>tobias_widmer</who>
+            <when>2005-04-15 04:47:41 EDT</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+    <bug>
+        <bug_id>88941</bug_id>
+        <element>
+            <who/>
+            <when/>
+            <what/>
+        </element>
+        <element>
+            <who>nick_edgar</who>
+            <when>2005-03-23 16:58:14 EST</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>nick_edgar</who>
+            <when>2005-03-23 16:58:14 EST</when>
+            <what>Severity</what>
+        </element>
+        <element>
+            <who>nick_edgar</who>
+            <when>2005-03-23 16:58:14 EST</when>
+            <what>Component</what>
+        </element>
+        <element>
+            <who>nick_edgar</who>
+            <when>2005-03-23 16:58:14 EST</when>
+            <what>Product</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-23 18:20:46 EST</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-23 18:20:46 EST</when>
+            <what>Priority</what>
+        </element>
+        <element>
+            <who>dirk_baeumer</who>
+            <when>2005-03-23 18:20:46 EST</when>
+            <what>Target Milestone</what>
+        </element>
+        <element>
+            <who>markus_keller</who>
+            <when>2005-03-24 04:08:45 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>markus_keller</who>
+            <when>2005-03-24 04:09:13 EST</when>
+            <what>CC</what>
+        </element>
+        <element>
+            <who>tobias_widmer</who>
+            <when>2005-03-24 05:01:08 EST</when>
+            <what>Assignee</what>
+        </element>
+        <element>
+            <who>tobias_widmer</who>
+            <when>2005-03-24 05:01:40 EST</when>
+            <what>Status</what>
+        </element>
+        <element>
+            <who>tobias_widmer</who>
+            <when>2005-03-24 05:01:40 EST</when>
+            <what>Resolution</what>
+        </element>
+    </bug>
+</bugs>

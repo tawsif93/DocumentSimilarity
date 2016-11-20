@@ -1,3 +1,5 @@
+package single_developer;
+
 /**
  * Created by peacefrog on 7/12/16.
  * Time 6:01 PM
@@ -50,7 +52,7 @@ public class WordFrequencyDetails {
 
 	@Override
 	public String toString() {
-		return "WordFrequencyDetails{" +
+		return "single_developer.WordFrequencyDetails{" +
 				"indexName='" + indexName + '\'' +
 				", word='" + word + '\'' +
 				", frequency=" + frequency +

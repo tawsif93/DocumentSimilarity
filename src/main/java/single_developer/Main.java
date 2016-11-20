@@ -1,3 +1,5 @@
+package single_developer;
+
 import org.apache.lucene.queryparser.classic.ParseException;
 
 import java.io.IOException;
@@ -11,9 +13,9 @@ import java.util.List;
  */
 public class Main {
 	public static void main(String[] args) throws IOException, ParseException {
-//		List<BugReport> bugReports = XMLFileParser.getInstance().parse("test.xml");
+//		List<single_developer.BugReport> bugReports = single_developer.XMLFileParser.getInstance().parse("test.xml");
 		BugReport testReport = XMLFileParser.getInstance().parse("report.xml").get(0);
-//		Indexer indexer = new Indexer(bugReports);
+//		single_developer.Indexer indexer = new single_developer.Indexer(bugReports);
 		Indexer indexer = new Indexer();
 //		indexer.createIndex();
 
@@ -38,9 +40,9 @@ public class Main {
 		});
 
 		System.out.println();
-		System.out.println("***************Word Developer Details***********");
+		System.out.println("***************Word single_developer.Developer Details***********");
 		wordMatcher.getWordDeveloperDetailsMap().forEach((s, wordDeveloperDetails) -> {
-			System.out.println(s + " ( Total Developer: " + wordDeveloperDetails.getDevCount().size() + " )");
+			System.out.println(s + " ( Total single_developer.Developer: " + wordDeveloperDetails.getDevCount().size() + " )");
 			wordDeveloperDetails.getDevCount().forEach((name, floats) -> System.out.println("\t\t" + name + " " + floats[0]));
 		});
 	}
@@ -48,13 +50,13 @@ public class Main {
 	private static void printSummedUpSortedResult(List<Developer> developers){
 
 		Collections.sort(developers, (o1, o2) -> o2.getSummedSimilarity().compareTo(o1.getSummedSimilarity()));
-		System.out.printf("%-25.30s | %-20.30s \n", "Developer name" , "Similarity");
+		System.out.printf("%-25.30s | %-20.30s \n", "single_developer.Developer name", "Similarity");
 
 		developers.stream().filter(developer -> developer.getSummedSimilarity() > 0.0).forEachOrdered(developer -> System.out.printf("%-25.30s | %-20.30s \n", developer.getName(), developer.getSummedSimilarity()));
 	}
 
 	private static void printAllResult(List<Developer> documentSimilarities) {
-		System.out.printf("%-30.30s | %-20.30s | %-20.30s\n", "Developer name" , "Summary similarity", "Description similarity");
+		System.out.printf("%-30.30s | %-20.30s | %-20.30s\n", "single_developer.Developer name", "Summary similarity", "Description similarity");
 		documentSimilarities.stream().filter(developer -> developer.getSummedSimilarity() > 0.0).forEachOrdered(developer -> System.out.printf("%-30.30s | %-20.30s | %-20.30s\n", developer.getName(), developer.getSummarySimilarity(), developer.getDescriptionSimilarity()));
 	}
 }

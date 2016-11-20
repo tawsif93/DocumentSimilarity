@@ -1,3 +1,4 @@
+package single_developer;
 
 import org.apache.commons.math3.linear.ArrayRealVector;
 import org.apache.commons.math3.linear.RealVector;
@@ -53,9 +54,9 @@ public class CosineDocumentSimilarity {
 
 		List<Developer> similarity = new ArrayList<>();
 
-//		System.out.println(test.document(0).get(Constants.SUMMARY));
+//		System.out.println(test.document(0).get(single_developer.Constants.SUMMARY));
 //		System.out.println(test.document(0).get(DESCRIPTION));
-//		getTermFrequencies(test, 0, Constants.SUMMARY).forEach((s, integer) -> System.out.println(s + " " + integer ));
+//		getTermFrequencies(test, 0, single_developer.Constants.SUMMARY).forEach((s, integer) -> System.out.println(s + " " + integer ));
 //		System.out.println(indexed.document(0).get(SUMMARY));
 //		System.out.println(indexed.document(0).get(DESCRIPTION));
 
@@ -93,7 +94,7 @@ public class CosineDocumentSimilarity {
 
 
 //
-//	CosineDocumentSimilarity(String s1, String s2) throws IOException {
+//	single_developer.CosineDocumentSimilarity(String s1, String s2) throws IOException {
 ////		Edited BY TAWSIF
 //
 //
@@ -151,7 +152,7 @@ public class CosineDocumentSimilarity {
 
 //	public static double getSummaryCosineSimilarity(String s1, String s2)
 //			throws IOException {
-//		return new CosineDocumentSimilarity(s1, s2).getSummaryCosineSimilarity();
+//		return new single_developer.CosineDocumentSimilarity(s1, s2).getSummaryCosineSimilarity();
 //	}
 
 	private Map<String, Integer> getTermFrequencies(IndexReader reader, int docId, String indexContent)

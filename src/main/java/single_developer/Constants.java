@@ -1,3 +1,5 @@
+package single_developer;
+
 import org.apache.lucene.analysis.util.CharArraySet;
 
 import java.util.Arrays;

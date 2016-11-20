@@ -1,3 +1,5 @@
+package single_developer;
+
 import org.tartarus.snowball.ext.EnglishStemmer;
 
 /**
@@ -6,11 +8,11 @@ import org.tartarus.snowball.ext.EnglishStemmer;
  */
 public class Stemmer {
 //
-//	private static Stemmer stemmer= null;
+//	private static single_developer.Stemmer stemmer= null;
 //
-//	public static Stemmer getInstance() {
+//	public static single_developer.Stemmer getInstance() {
 //
-//		if(stemmer== null) stemmer = new Stemmer();
+//		if(stemmer== null) stemmer = new single_developer.Stemmer();
 //
 //		return stemmer;
 //	}

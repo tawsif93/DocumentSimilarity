@@ -1,3 +1,5 @@
+package single_developer;
+
 import java.util.Comparator;
 
 /**
@@ -40,7 +42,7 @@ public class Developer implements Comparator<Developer>{
 
 	@Override
 	public String toString() {
-		return "Developer{" +
+		return "single_developer.Developer{" +
 				"name= '" + name + '\'' +
 				", summarySimilarity= " + summarySimilarity +
 				", descriptionSimilarity= " + descriptionSimilarity +

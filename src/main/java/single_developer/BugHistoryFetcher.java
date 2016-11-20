@@ -1,3 +1,5 @@
+package single_developer;
+
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -37,6 +39,7 @@ public class BugHistoryFetcher {
 //		});
 
 		BugHistoryFetcher test = new BugHistoryFetcher();
+
 		test.formatXmlFile();
 		test.writeXMLFile(dom, "test_JSoup.xml");
 	}
