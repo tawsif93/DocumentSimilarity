@@ -205,8 +205,54 @@ public class BugReader {
 		return reports;
 	}
 
+	public ArrayList<String> find_DBD_Path(String firstDeveloperName, String secondDeveloperName) {
+		ArrayList<String> paths = new ArrayList<>();
+
+		for (int i = 0; i < HN.size(); i++) {
+			NetworkLink firstLink = HN.get(i);
+			if (firstLink.relationType == 2) {
+				NetworkNode firstDeveloperNode = firstLink.firstNode;
+				Developer firstDeveloper = (Developer) firstDeveloperNode.customNodes;
+				if (firstDeveloper.getName().equals(firstDeveloperName)) {
+//					System.out.println("pass");
+					NetworkNode firstBugNode = firstLink.secondNode;
+					Bug firstBug = (Bug) firstBugNode.customNodes;
+
+					for (int j = 0; j < HN.size(); j++) {
+						NetworkLink secondLink = HN.get(j);
+
+						if (secondLink.relationType == 1) {
+							NetworkNode secondBugNode = secondLink.firstNode;
+							Bug secondBug = (Bug) secondBugNode.customNodes;
+
+							if (secondBug.getBugID().equals(firstBug.getBugID())) {
+								NetworkNode secondDeveloperNode = secondLink.secondNode;
+								Developer secondDeveloper = (Developer) secondDeveloperNode.customNodes;
+
+								if (secondDeveloper.getName().equals(secondDeveloperName)) {
+									String path = firstDeveloperName + " " + secondBug.getBugID() + " " + secondDeveloperName;
+									paths.add(path);
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		return paths;
+	}
+
 	public static void main(String[] args) {
 		BugReader reader = new BugReader();
 		reader.parse("/home/peacefrog/Desktop/data_test/finalData_2.xml", "//home/peacefrog/Desktop/data_test/test_JSoup.xml");
+
+		ArrayList<String> paths = reader.find_DBD_Path("Dejan Glozic", "daniel_megert");
+
+		System.out.println(paths.size());
+
+		paths.forEach(System.out::println);
+
 	}
 }
