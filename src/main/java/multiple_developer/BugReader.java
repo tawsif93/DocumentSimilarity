@@ -61,11 +61,15 @@ public class BugReader {
 
 					String bugID = bugNodeElement.getElementsByTagName("id").item(0).getTextContent();
 					String name = bugNodeElement.getElementsByTagName("developer").item(0).getTextContent();
+					String username = bugNodeElement.getElementsByTagName("developer_username").item(0).getTextContent();
 					String summary = bugNodeElement.getElementsByTagName("short_desc").item(0).getTextContent();
 					String description = bugNodeElement.getElementsByTagName("thetext").item(0).getTextContent();
 					String product = bugNodeElement.getElementsByTagName("product").item(0).getTextContent();
 					String component = bugNodeElement.getElementsByTagName("component").item(0).getTextContent();
 					String creationTime = bugNodeElement.getElementsByTagName("creation_time").item(0).getTextContent();
+
+					if (!DeveloperRepository.developersUsernameOriginalNameMapping.containsKey(username))
+						DeveloperRepository.developersUsernameOriginalNameMapping.put(username, name);
 
 					NodeList commentsNode = bugNodeElement.getElementsByTagName("comment");
 					NodeList historyElements = history_node_element.getElementsByTagName("element");
@@ -83,8 +87,12 @@ public class BugReader {
 						String commentID = commentDetails.getElementsByTagName("comment_id").item(0).getTextContent();
 						String commentCount = commentDetails.getElementsByTagName("comment_count").item(0).getTextContent();
 						String developerName = commentDetails.getElementsByTagName("who").item(0).getTextContent();
+						String developerUsername = commentDetails.getElementsByTagName("commenter_username").item(0).getTextContent();
 						String commentTime = commentDetails.getElementsByTagName("when").item(0).getTextContent();
 						String commentText = commentDetails.getElementsByTagName("comment_text").item(0).getTextContent();
+
+						if (!DeveloperRepository.developersUsernameOriginalNameMapping.containsKey(username))
+							DeveloperRepository.developersUsernameOriginalNameMapping.put(developerUsername, developerName);
 
 						Comment newComment = new Comment(commentID, commentCount, commentTime, commentText);
 						commentArrayList.add(newComment);
@@ -118,6 +126,10 @@ public class BugReader {
 						Node element = historyElements.item(i);
 //						System.out.println("History "+((Element)element).getElementsByTagName("who").item(0).getTextContent());
 						String developerName = ((Element) element).getElementsByTagName("who").item(0).getTextContent();
+
+						if (DeveloperRepository.developersUsernameOriginalNameMapping.containsKey(developerName)) {
+							developerName = DeveloperRepository.developersUsernameOriginalNameMapping.get(developerName);
+						}
 						bugDeveloper = new Developer(developerName);
 
 						developerNetworkNode = new NetworkNode("D", bugDeveloper);
@@ -248,7 +260,7 @@ public class BugReader {
 		BugReader reader = new BugReader();
 		reader.parse("/home/peacefrog/Desktop/data_test/finalData_2.xml", "//home/peacefrog/Desktop/data_test/test_JSoup.xml");
 
-		ArrayList<String> paths = reader.find_DBD_Path("Dejan Glozic", "daniel_megert");
+		ArrayList<String> paths = reader.find_DBD_Path("Dejan Glozic", "Dani Megert");
 
 		System.out.println(paths.size());
 

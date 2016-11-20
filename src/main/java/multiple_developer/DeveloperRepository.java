@@ -1,16 +1,13 @@
 package multiple_developer;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by peacefrog on 11/19/16.
  * Time 10:00 PM
  */
 public class DeveloperRepository {
-	Set<Developer> developers;
+	static Map<String, String> developersUsernameOriginalNameMapping = new HashMap<>();
 
-	public DeveloperRepository() {
-		this.developers = new HashSet<>();
-	}
 }
