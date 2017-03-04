@@ -115,8 +115,7 @@ public class BugHistoryFetcher {
 				Element what = dom.createElement("what");
 				Element removed = dom.createElement("removed");
 				Element added = dom.createElement("added");
-				System.out.println(element.select("td"));
-				System.out.println();
+
 				if (element.select("td").size() == 5) {
 					name[0] = element.select("td").get(0).html();
 					time[0] = element.select("td").get(1).html();
