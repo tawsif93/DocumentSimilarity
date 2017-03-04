@@ -41,7 +41,7 @@ public class BugHistoryFetcher {
 		BugHistoryFetcher test = new BugHistoryFetcher();
 
 		test.formatXmlFile();
-		test.writeXMLFile(dom, "test_JSoup.xml");
+		test.writeXMLFile(dom, "2015_2016.xml");
 	}
 
 
@@ -91,8 +91,9 @@ public class BugHistoryFetcher {
 		for (int i = 0; i < bugs.size(); i++) {
 			//System.out.println(((Element) bugs.item(i)).getElementsByTagName("bug_id").item(0).getTextContent());
 			System.out.println("Current bug: " + bugs.get(i));
-			Document doc = Jsoup.connect("https://bugs.eclipse.org/bugs/show_activity.cgi?id=" + bugs.get(i)).timeout(10 * 1000).get();
-			Elements newsHeadlines = doc.select("html body.bugs-eclipse-org-bugs.yui-skin-sam div#bugzilla-body table tbody tr");
+//			Document doc = Jsoup.connect("https://bugs.eclipse.org/bugs/show_activity.cgi?id=" + bugs.get(i)).timeout(10 * 1000).get();
+			Document doc = Jsoup.connect("https://netbeans.org/bugzilla/show_activity.cgi?id=" + bugs.get(i)).timeout(10 * 1000).get();
+			Elements newsHeadlines = doc.select("html body #wrapper-flex #middle table tbody tr td div div#bugzilla-body table tbody tr");
 
 			Element bug = dom.createElement("bug");
 			Element id = dom.createElement("bug_id");
@@ -112,18 +113,25 @@ public class BugHistoryFetcher {
 				Element who = dom.createElement("who");
 				Element when = dom.createElement("when");
 				Element what = dom.createElement("what");
-
+				Element removed = dom.createElement("removed");
+				Element added = dom.createElement("added");
+				System.out.println(element.select("td"));
+				System.out.println();
 				if (element.select("td").size() == 5) {
 					name[0] = element.select("td").get(0).html();
 					time[0] = element.select("td").get(1).html();
 					who.appendChild(dom.createTextNode(name[0]));
 					when.appendChild(dom.createTextNode(time[0]));
 					what.appendChild(dom.createTextNode(element.select("td").get(2).html()));
+					removed.appendChild(dom.createTextNode(element.select("td").get(3).html()));
+					added.appendChild(dom.createTextNode(element.select("td").get(4).html()));
 
 				} else if (element.select("td").size() == 3) {
 					who.appendChild(dom.createTextNode(name[0]));
 					when.appendChild(dom.createTextNode(time[0]));
 					what.appendChild(dom.createTextNode(element.select("td").get(0).html()));
+					removed.appendChild(dom.createTextNode(element.select("td").get(3).html()));
+					added.appendChild(dom.createTextNode(element.select("td").get(4).html()));
 				}
 
 				//System.out.println(((Element) bugs.item(i)).getElementsByTagName("bug_id").item(0).getNodeValue());

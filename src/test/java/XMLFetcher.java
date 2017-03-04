@@ -58,7 +58,7 @@ public class XMLFetcher {
 
 		fetchCSV();
 
-		for (Integer i = 2001; i < 2017; i++) {
+		for (Integer i = 2015; i < 2017; i++) {
 			CSVReader csvReader;
 			try {
 				csvReader = new CSVReader(new FileReader("CSV/" + i.toString() + ".csv"));
@@ -84,20 +84,35 @@ public class XMLFetcher {
 	}
 
 	private void fetchCSV() {
-		for (int i = 2001; i <= 2016; i++) {
-			Integer year = i;
+		for (int i = 2015; i <= 2016; i++) {
+			/*Integer year = i;
 			String baseURL = "https://bugs.eclipse.org/bugs/buglist.cgi?" +
-					"bug_status=VERIFIED&" +
-					"bug_status=RESOLVED&" +
+					"bug_status=NEW&" +
+					"bug_status=ASSIGNED&" +
+					"bug_status=REOPENED&" +
 					"classification=Eclipse&" +
 					"f1=creation_ts&f2=creation_ts&" +
 					"o1=greaterthaneq&o2=lessthaneq&" +
 					"limit=0&list_id=14812660&" +
 					"product=JDT&" +
 					"query_format=advanced&" +
-					"resolution=FIXED&" +
 					"v1=" + year.toString() + "-1-01%20&v2=" +
-					year.toString() + "-12-31%20&" +
+					year.toString() + "k-12-31%20&" +
+					"ctype=csv&human=1";*/
+			Integer year = i;
+			String baseURL = "https://netbeans.org/bugzilla/buglist.cgi?" +
+					"bug_status=NEW&" +
+					"bug_status=STARTED&" +
+					"bug_status=REOPENED&" +
+//					"classification=Netbeans&" +
+					"f1=creation_ts&f2=creation_ts&" +
+					"o1=greaterthaneq&o2=lessthaneq&" +
+					"limit=0&" +
+					"product=java&" +
+					"query_format=advanced&" +
+//					"resolution=FIXED&" +
+					"v1=" + year.toString() + "%2F1%2F01&v2=" +
+					year.toString() + "%2F12%2F31&" +
 					"ctype=csv&human=1";
 
 			File csvFile = new File("CSV/" + year.toString() + ".csv");
@@ -112,7 +127,7 @@ public class XMLFetcher {
 	}
 
 	public void buildAllBugReportXML(ArrayList<String> urls) {
-		buildMainXML(urls, "resolutionFIXED_statusRESOLVEDandVERIFIED.xml");
+		buildMainXML(urls, "bug_status_NEW_ASSIGNED_REOPENED.xml");
 	}
 
 	@Test
