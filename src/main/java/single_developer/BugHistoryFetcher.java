@@ -129,8 +129,8 @@ public class BugHistoryFetcher {
 					who.appendChild(dom.createTextNode(name[0]));
 					when.appendChild(dom.createTextNode(time[0]));
 					what.appendChild(dom.createTextNode(element.select("td").get(0).html()));
-					removed.appendChild(dom.createTextNode(element.select("td").get(3).html()));
-					added.appendChild(dom.createTextNode(element.select("td").get(4).html()));
+					removed.appendChild(dom.createTextNode(element.select("td").get(1).html()));
+					added.appendChild(dom.createTextNode(element.select("td").get(2).html()));
 				}
 
 				//System.out.println(((Element) bugs.item(i)).getElementsByTagName("bug_id").item(0).getNodeValue());
