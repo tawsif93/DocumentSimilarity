@@ -41,7 +41,7 @@ public class BugHistoryFetcher {
 		BugHistoryFetcher test = new BugHistoryFetcher();
 
 		test.formatXmlFile();
-		test.writeXMLFile(dom, "2015_2016.xml");
+		test.writeXMLFile(dom, "2009-2014_part_3.xml");
 	}
 
 
@@ -138,6 +138,8 @@ public class BugHistoryFetcher {
 				newElement.appendChild(who);
 				newElement.appendChild(when);
 				newElement.appendChild(what);
+				newElement.appendChild(removed);
+				newElement.appendChild(added);
 
 				bug.appendChild(newElement);
 			});
