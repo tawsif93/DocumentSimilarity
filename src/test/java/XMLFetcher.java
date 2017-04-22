@@ -38,6 +38,9 @@ public class XMLFetcher {
 //  Use -Xmx6g as JVM argument to increase Java Heap Memory before running this program
 
 	private String url = "https://bugs.eclipse.org/bugs/";
+	private static final int startYear = 2006;
+	private static final int endYear = 2016;
+	private static final String fileName = "aspectJ_2006_2016_new.xml";
 
 	public XMLFetcher() {
 	}
@@ -58,7 +61,7 @@ public class XMLFetcher {
 
 		fetchCSV();
 
-		for (Integer i = 2009; i < 2013; i++) {
+		for (Integer i = startYear; i <= endYear; i++) {
 			CSVReader csvReader;
 			try {
 				csvReader = new CSVReader(new FileReader("CSV/" + i.toString() + ".csv"));
@@ -84,14 +87,14 @@ public class XMLFetcher {
 	}
 
 	private void fetchCSV() {
-		for (int i = 2009; i <= 2012; i++) {
+		for (int i = startYear; i <= endYear; i++) {
 			Integer year = i;
 			String baseURL = "https://bugs.eclipse.org/bugs/buglist.cgi?" +
-//					"bug_status=NEW&" +
-//					"bug_status=ASSIGNED&" +
-//					"bug_status=REOPENED&" +
-					"bug_status=RESOLVED&" +
-					"bug_status=VERIFIED&" +
+					"bug_status=NEW&" +
+					"bug_status=ASSIGNED&" +
+					"bug_status=REOPENED&" +
+//					"bug_status=RESOLVED&" +
+//					"bug_status=VERIFIED&" +
 //					"classification=Eclipse&" +
 					"classification=Tools&" +
 					"f1=creation_ts&f2=creation_ts&" +
@@ -99,7 +102,7 @@ public class XMLFetcher {
 					"limit=0&list_id=14812660&" +
 //					"product=JDT&" +
 					"product=AspectJ&" +
-					"resolution=FIXED&" +
+//					"resolution=FIXED&" +
 					"query_format=advanced&" +
 					"v1=" + year.toString() + "-1-01%20&v2=" +
 					year.toString() + "-12-31%20&" +
@@ -131,8 +134,8 @@ public class XMLFetcher {
 		}
 	}
 
-	public void buildAllBugReportXML(ArrayList<String> urls) {
-		buildMainXML(urls, "aspectJ_2009_2012.xml");
+	private void buildAllBugReportXML(ArrayList<String> urls) {
+		buildMainXML(urls, fileName);
 	}
 
 	@Test
