@@ -17,6 +17,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,9 +41,15 @@ public class BugHistoryFetcher {
 //		});
 
 		BugHistoryFetcher test = new BugHistoryFetcher();
+		try {
 
-		test.formatXmlFile();
-		test.writeXMLFile(dom, "2009-2014_part_3.xml");
+			test.formatXmlFile();
+		} catch (UnknownHostException | SocketTimeoutException e) {
+			System.out.println("ERROR");
+			e.printStackTrace();
+		} finally {
+			test.writeXMLFile(dom, "aspectj_2006-2016_new_history_part_2.xml");
+		}
 	}
 
 
@@ -91,10 +99,10 @@ public class BugHistoryFetcher {
 		for (int i = 0; i < bugs.size(); i++) {
 			//System.out.println(((Element) bugs.item(i)).getElementsByTagName("bug_id").item(0).getTextContent());
 			System.out.println("Current bug: " + bugs.get(i));
-//			Document doc = Jsoup.connect("https://bugs.eclipse.org/bugs/show_activity.cgi?id=" + bugs.get(i)).timeout(10 * 1000).get();
-			Document doc = Jsoup.connect("https://netbeans.org/bugzilla/show_activity.cgi?id=" + bugs.get(i)).timeout(10 * 1000).get();
-			Elements newsHeadlines = doc.select("html body #wrapper-flex #middle table tbody tr td div div#bugzilla-body table tbody tr");
-
+			Document doc = Jsoup.connect("https://bugs.eclipse.org/bugs/show_activity.cgi?id=" + bugs.get(i)).timeout(10 * 1000).get();
+//			Document doc = Jsoup.connect("https://netbeans.org/bugzilla/show_activity.cgi?id=" + bugs.get(i)).timeout(10 * 1000).get();
+//			Elements newsHeadlines = doc.select("html body #wrapper-flex #middle table tbody tr td div div#bugzilla-body table tbody tr");//NETBEANS
+			Elements newsHeadlines = doc.select("html body.bugs-eclipse-org-bugs.yui-skin-sam div#bugzilla-body table tbody tr");//ECLIPSE BUGZILLA
 			Element bug = dom.createElement("bug");
 			Element id = dom.createElement("bug_id");
 
